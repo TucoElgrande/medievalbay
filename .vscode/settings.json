@@ -1,0 +1,5 @@
+{
+  "editor.codeActionsOnSave": ["source.addMissingImports"]
+}
+
+//Workaround för att slippa vscode att ta bort import react i app.tsx
