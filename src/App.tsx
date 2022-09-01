@@ -1,11 +1,14 @@
+import Header from "./components/Header";
+import Main from "./components/Main";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<div>hello world</div>}></Route>
-    </Routes>
+    <div>
+      <Header />
+      <h1>MEDIEVALBAY</h1>
+      <Main />
+    </div>
   );
 }
 

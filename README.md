@@ -12,6 +12,8 @@ Recreational instructions in progress...
 
 Link to documentation of component library(?) in progress
 
+Stand "Medievalbay folder" to initialize the settings.json
+
 ---
 
 # Webbshop med React + TS
@@ -40,9 +42,9 @@ mm.
 Ni ska vid presentationstillfället hålla i ett muntlig presentation inför klassen. Följande
 punkter skall förklaras under presentationen:
 
--   Genomgång av och presentation av det byggda systemet och dess UX.
--   Kortare genomgång av kodens struktur och flöde.
--   Vad som har fungera bra och vad som varit svårt under projektets gång.
+- Genomgång av och presentation av det byggda systemet och dess UX.
+- Kortare genomgång av kodens struktur och flöde.
+- Vad som har fungera bra och vad som varit svårt under projektets gång.
 
 Uppgiftsbeskrivningen
 Det ni ska skapa är en klassisk e-handel sida som presenterar ett antal olika produkter.
