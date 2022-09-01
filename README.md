@@ -92,7 +92,7 @@ bilder så det enkelt kan sparas i localstorage.
 
 - [x] 1. Git & GitHub har använts
 - [x] 2. Projektmappen innehåller en README.md fil - (läs ovan för mer info)
-- [ ] 3. Uppgiften lämnas in i tid!
+- [x] 3. Uppgiften lämnas in i tid!
 - [ ] 4. React, Typescript & ett komponentbibliotek ska används
 - [x] 5. React Router används för navigering
 - [ ] 6. Formulären vid utcheckningen ska gå att automatiskt fyllas i
@@ -106,7 +106,7 @@ bilder så det enkelt kan sparas i localstorage.
 - [ ] 11. Alla punkter för godkänt är uppfyllda
 - [ ] 12. Det finns en admin-sida där man kan ändra, lägga till eller ta bort produkter på sidan
 - [ ] 13. Samtliga produkter skall vara sparade i localstorage (om localstorage är tom då sidan
-  läses in behöver samtliga fördefinierade produkter sparas där)
+      läses in behöver samtliga fördefinierade produkter sparas där)
 
 Do you have any questions or need something explained in English? - Please feel free to
 ask me during a lecture. Good luck!
