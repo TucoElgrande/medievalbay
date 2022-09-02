@@ -1,0 +1,26 @@
+.left-aside-spacing {
+    height: 100rem;
+    width: 20rem;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-section {
+    width: 30rem;
+}
+
+.box-item {
+    margin: 2rem;
+    min-width: 30rem;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.center-screen {
+    justify-content: center;
+}
