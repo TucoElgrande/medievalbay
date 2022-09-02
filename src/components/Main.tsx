@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import mockData from "../data/data";
-import ProductCardBrowse from "./ProductCartBrowse";
+import ProductCardBrowse from "./ProductCardBrowse";
 
 function Main() {
     const [product] = useState(mockData);
