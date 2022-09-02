@@ -1,5 +1,8 @@
 {
-  "editor.codeActionsOnSave": ["source.addMissingImports"]
+    //Workaround för att slippa vscode att ta bort import react i app.tsx
+    "editor.codeActionsOnSave": ["source.addMissingImports"],
+    // Default prettier config
+    "prettier.tabWidth": 4,
+    "editor.detectIndentation": false,
+    "prettier.printWidth": 100
 }
-
-//Workaround för att slippa vscode att ta bort import react i app.tsx

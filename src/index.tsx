@@ -5,15 +5,13 @@ import App from "./App";
 import CartProvider from "./context/CartContext";
 import "./global.css";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <CartProvider>
-        <App />
-      </CartProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+    <React.StrictMode>
+        <BrowserRouter>
+            <CartProvider>
+                <App />
+            </CartProvider>
+        </BrowserRouter>
+    </React.StrictMode>
 );
