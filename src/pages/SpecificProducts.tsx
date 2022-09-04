@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import mockProducts, { getProduct, getProducts } from "../data/data";
+import mockProducts, { getProduct, getProducts, Product } from "../data/data";
 import ProductCardBrowse from "../components/ProductCardBrowse";
 
 function SpecificProducts() {
@@ -10,9 +10,9 @@ function SpecificProducts() {
     if (!product) {
         return <p>product does not exist</p>;
         //TODO ^ + go home button, possible be made into component?
+    } else {
+        return <ProductCardBrowse product={product} />;
     }
-
-    return <ProductCardBrowse {...product} />;
 }
 
 export default SpecificProducts;

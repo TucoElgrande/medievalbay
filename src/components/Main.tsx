@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import mockProducts, { getProducts } from "../data/data";
+import mockProducts, { getProducts, Product } from "../data/data";
 import ProductCardBrowse from "./ProductCardBrowse";
 
 function Main() {
-    const products = getProducts();
+    const products: Product[] = getProducts();
 
     return (
         <main>
             {products.map((product) => (
-                <ProductCardBrowse {...product} />
+                <ProductCardBrowse
+                    key={product.id}
+                    product={product}
+                    buttons={true}
+                    cardClickable={true}
+                />
             ))}
         </main>
     );
