@@ -1,0 +1,44 @@
+body {
+    width: 100%;
+}
+
+.text {
+    max-width: 30%;
+    margin: 6rem 6rem 3rem 6rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item-two {
+    flex: 50%;
+}
+
+.flex-item-one {
+    flex: 100%;
+}
+
+.center-items {
+    justify-content: center;
+    align-items: center;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+@media (max-width: 960px) {
+    .text {
+        max-width: 80%;
+        margin: 1rem 3rem 0 3rem;
+    }
+}
+
+@media (max-width: 580px) {
+    .text {
+        max-width: 80%;
+        margin: 1rem;
+    }
+}
