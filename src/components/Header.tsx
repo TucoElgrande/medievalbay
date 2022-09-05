@@ -1,5 +1,5 @@
-import { Badge, IconButton } from "@mui/material";
-import React, { CSSProperties } from "react";
+import { Badge, FormControlLabel, FormGroup, IconButton, Switch } from "@mui/material";
+import React, { CSSProperties, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -29,6 +29,7 @@ function Header() {
         </div>
     );
 }
+
 const rootStyle: CSSProperties = {
     display: "flex",
     justifyContent: "space-between",
