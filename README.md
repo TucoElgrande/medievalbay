@@ -93,7 +93,7 @@ bilder så det enkelt kan sparas i localstorage.
 - [x] 1. Git & GitHub har använts
 - [x] 2. Projektmappen innehåller en README.md fil - (läs ovan för mer info)
 - [x] 3. Uppgiften lämnas in i tid!
-- [ ] 4. React, Typescript & ett komponentbibliotek ska används
+- [x] 4. React, Typescript & ett komponentbibliotek ska används
 - [x] 5. React Router används för navigering
 - [ ] 6. Formulären vid utcheckningen ska gå att automatiskt fyllas i
 - [ ] 7. Samtliga fält ska ha valideringsregler
