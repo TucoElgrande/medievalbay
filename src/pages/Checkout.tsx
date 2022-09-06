@@ -10,6 +10,8 @@ function Checkout() {
     cart.forEach(item => {
         totalPrice += item.price
     });
+    
+
     return (
         <div>
             <h2>Checkout</h2>
@@ -18,7 +20,7 @@ function Checkout() {
                     <div>
                         <div>
                             <p >{item.title}</p>
-                            <p>{item.price} Kr</p>
+                            <p>{item.price} $</p>
                             <img src={item.imageUrl}></img>
                         </div>
                         <Button size="small" variant="outlined" onClick={() => { removeOneFromCart(item) }}>
@@ -26,7 +28,9 @@ function Checkout() {
                         </Button>
                     </div>
                 </div>))}
-                <p>Total: {totalPrice}</p>
+                { totalPrice != 0 
+                }
+                {totalPrice != 0 && <p> Total: {totalPrice} $</p>}
             </div>
             <Button variant="contained" color="success" onClick={() => { alert('Thanks for your purchase'); removeAllCart() }}>
                 Confirm purchase
