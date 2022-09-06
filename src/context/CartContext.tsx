@@ -1,5 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
 import { Product } from "../data/data";
+import { Col, Row } from "react-bootstrap"
 
 interface ContextValue {
     cart: Product[];
@@ -17,6 +18,7 @@ const CartContext = createContext<ContextValue>({
     addToCart: () => {},
     removeAllCart: () => {},
     removeOneFromCart: () => {},
+
 });
 
 function CartProvider({ children }: Props) {
@@ -35,13 +37,14 @@ function CartProvider({ children }: Props) {
     };
 
     const removeAllCart = () => {
-        setCart((prevState) => {
-            return prevState.splice(0);
-        });
+        setCart([]);
     };
 
     console.log(cart);
-
+    // const displayCart = () => {
+    //     return (
+    //         </div>
+    // )}
     return (
         <CartContext.Provider value={{ cart, addToCart, removeAllCart, removeOneFromCart }}>
             {children}
