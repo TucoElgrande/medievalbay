@@ -4,9 +4,12 @@ import { NavLink, Outlet } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Shop } from "@mui/icons-material";
+import { useProduct } from "../context/ProductContext";
 
 function Header() {
     const { cart } = useCart();
+    const { isAdmin, toggleAdmin } = useProduct();
+
     return (
         <div>
             <header style={rootStyle}>
@@ -24,6 +27,7 @@ function Header() {
                         </Badge>
                     </NavLink>
                 </div>
+                <Switch checked={isAdmin} onChange={toggleAdmin} />
             </header>
             <Outlet />
         </div>

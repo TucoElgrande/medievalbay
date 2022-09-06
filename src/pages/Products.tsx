@@ -1,19 +1,20 @@
-import { Switch } from "@mui/material";
 import React, { useState } from "react";
-import Main from "../components/Main";
+import ProductCardBrowse from "../components/ProductCardBrowse";
+import { useProduct } from "../context/ProductContext";
 
 function Products() {
-    const [isAdmin, setIsAdmin] = useState(false);
-
-    const toggleAdmin = () => {
-        setIsAdmin((isAdmin) => !isAdmin);
-    };
+    const { products } = useProduct();
     return (
-        <>
-            <Main />
-            <Switch onChange={toggleAdmin} inputProps={{ "aria-label": "controlled" }} />
-            {isAdmin && <h2>You're admin now boi :)</h2>}
-        </>
+        <main>
+            {products.map((product) => (
+                <ProductCardBrowse
+                    key={product.id}
+                    product={product}
+                    buttons={true}
+                    cardClickable={true}
+                />
+            ))}
+        </main>
     );
 }
 

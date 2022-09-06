@@ -2,6 +2,9 @@ import React, { CSSProperties } from "react";
 import { useCart } from "../context/CartContext";
 import { Product } from "../data/data";
 import { NavLink, Outlet } from "react-router-dom";
+import { Button } from "@mui/material";
+import { useProduct } from "../context/ProductContext";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 type Props = {
     product: Product;
@@ -11,6 +14,7 @@ type Props = {
 
 const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons }) => {
     const { addToCart, removeOneFromCart } = useCart();
+    const { isAdmin } = useProduct();
 
     console.log(cardClickable);
     return (
@@ -25,6 +29,11 @@ const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons })
                 </NavLink>
             ) : (
                 <img src={product.imageUrl} />
+            )}
+            {isAdmin && (
+                <Button variant="outlined" startIcon={<DeleteIcon />}>
+                    Delete
+                </Button>
             )}
         </div>
     );
