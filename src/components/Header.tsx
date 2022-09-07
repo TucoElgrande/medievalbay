@@ -1,12 +1,15 @@
-import { Badge, IconButton } from "@mui/material";
-import React, { CSSProperties } from "react";
+import { Badge, FormControlLabel, FormGroup, IconButton, Switch } from "@mui/material";
+import React, { CSSProperties, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Shop } from "@mui/icons-material";
+import { useProduct } from "../context/ProductContext";
 
 function Header() {
     const { cart } = useCart();
+    const { isAdmin, toggleAdmin } = useProduct();
+
     return (
         <div>
             <header style={rootStyle}>
@@ -24,11 +27,13 @@ function Header() {
                         </Badge>
                     </NavLink>
                 </div>
+                <Switch checked={isAdmin} onChange={toggleAdmin} />
             </header>
             <Outlet />
         </div>
     );
 }
+
 const rootStyle: CSSProperties = {
     display: "flex",
     justifyContent: "space-between",

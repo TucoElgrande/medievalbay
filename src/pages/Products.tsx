@@ -1,8 +1,21 @@
-import React from "react";
-import Main from "../components/Main";
+import React, { useState } from "react";
+import ProductCardBrowse from "../components/ProductCardBrowse";
+import { useProduct } from "../context/ProductContext";
 
 function Products() {
-    return <Main />;
+    const { products } = useProduct();
+    return (
+        <main>
+            {products.map((product) => (
+                <ProductCardBrowse
+                    key={product.id}
+                    product={product}
+                    buttons={true}
+                    cardClickable={true}
+                />
+            ))}
+        </main>
+    );
 }
 
 export default Products;
