@@ -1,5 +1,4 @@
 import Header from "./components/Header";
-import Main from "./components/Main";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
