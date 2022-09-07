@@ -29,8 +29,6 @@ function ProductProvider({ children }: Props) {
         setIsAdmin((isAdmin) => !isAdmin);
     };
 
-    // Something something don't mutilate the array
-
     const addProduct = (product: Product) => {
         setProducts((prevState) => [...prevState, product]);
     };

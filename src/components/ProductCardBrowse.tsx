@@ -14,7 +14,7 @@ type Props = {
 
 const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons }) => {
     const { addToCart, removeOneFromCart } = useCart();
-    const { isAdmin } = useProduct();
+    const { isAdmin, removeProduct } = useProduct();
 
     console.log(cardClickable);
     return (
@@ -31,7 +31,13 @@ const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons })
                 <img src={product.imageUrl} />
             )}
             {isAdmin && (
-                <Button variant="outlined" startIcon={<DeleteIcon />}>
+                <Button
+                    onClick={() => {
+                        removeProduct(product);
+                    }}
+                    variant="outlined"
+                    startIcon={<DeleteIcon />}
+                >
                     Delete
                 </Button>
             )}
