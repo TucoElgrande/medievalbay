@@ -1,6 +1,5 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
 import { Product } from "../data/data";
-import { Col, Row } from "react-bootstrap"
 
 interface ContextValue {
     cart: Product[];
@@ -15,9 +14,9 @@ interface Props {
 
 const CartContext = createContext<ContextValue>({
     cart: [],
-    addToCart: () => {},
-    removeAllCart: () => {},
-    removeOneFromCart: () => {},
+    addToCart: () => { },
+    removeAllCart: () => { },
+    removeOneFromCart: () => { },
 
 });
 

@@ -2,6 +2,7 @@ import React from "react";
 import { useCart } from "../context/CartContext";
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
+import CustomerForm from "../components/CustomerForm";
 
 
 function Checkout() {
@@ -10,7 +11,7 @@ function Checkout() {
     cart.forEach(item => {
         totalPrice += item.price
     });
-    
+
 
     return (
         <div>
@@ -28,7 +29,7 @@ function Checkout() {
                         </Button>
                     </div>
                 </div>))}
-                { totalPrice != 0 
+                {totalPrice != 0
                 }
                 {totalPrice != 0 && <p> Total: {totalPrice} $</p>}
             </div>
@@ -38,6 +39,8 @@ function Checkout() {
             <Button variant="outlined" color="error" onClick={() => removeAllCart()}>
                 Clear cart
             </Button>
+            <CustomerForm></CustomerForm>
+
         </div>
     );
 
