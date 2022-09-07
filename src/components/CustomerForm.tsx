@@ -19,7 +19,7 @@ interface Props {
 }
 
 const CustomerSchema = Yup.object().shape<CustomerRecord>({
-    firstName: Yup.string().trim().min(2, "First name must be longer than 2 letters").max(25, "max 15 letters").required("First name field cannot be empty"),
+    firstName: Yup.string().min(2, "First name must be longer than 2 letters").max(25, "max 15 letters").required("First name field cannot be empty"),
     lastName: Yup.string().strict().min(5).max(25, "max 15 letters").required("Last name field cannot be empty"),
     email: Yup.string().email("This must be a valid email").min(5).max(25, "max 15 letters").required("Email field cannot be empty")
 });
