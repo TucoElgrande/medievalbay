@@ -2,7 +2,7 @@ import React from "react";
 import { useCart } from "../context/CartContext";
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import { currencyFormat } from "../utilities/currencyFormat"
 
 function Checkout() {
     const { cart, removeOneFromCart, removeAllCart } = useCart();
@@ -19,8 +19,8 @@ function Checkout() {
                 {cart.map(item => (<div>
                     <div>
                         <div>
-                            <p >{item.title}</p>
-                            <p>{item.price} $</p>
+                            <p>{item.title}</p>
+                            <p>{currencyFormat(item.price)}</p>
                             <img src={item.imageUrl}></img>
                         </div>
                         <Button size="small" variant="outlined" onClick={() => { removeOneFromCart(item) }}>
@@ -30,7 +30,7 @@ function Checkout() {
                 </div>))}
                 { totalPrice != 0 
                 }
-                {totalPrice != 0 && <p> Total: {totalPrice} $</p>}
+                {totalPrice != 0 && <p> Total: {currencyFormat(totalPrice)}</p>}
             </div>
             <Button variant="contained" color="success" onClick={() => { alert('Thanks for your purchase'); removeAllCart() }}>
                 Confirm purchase
