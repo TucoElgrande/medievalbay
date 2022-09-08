@@ -1,9 +1,23 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
-import { getProducts, Product } from "../data/data";
+import { getProducts } from "../data/data";
+
+export interface Product {
+    id: number;
+    title: string;
+    price: number;
+    imageUrl: string;
+}
+
+export interface ProductDTO {
+    title: string;
+    price: number;
+    imageUrl: string;
+}
+export type createProduct = Omit<Product, "id">;
 
 interface ContextValue {
     products: Product[];
-    addProduct: (product: Product) => void;
+    addProduct: (product: ProductDTO) => void;
     removeProduct: (product: Product) => void;
     isAdmin: boolean;
     toggleAdmin: () => void;
@@ -29,8 +43,20 @@ function ProductProvider({ children }: Props) {
         setIsAdmin((isAdmin) => !isAdmin);
     };
 
-    const addProduct = (product: Product) => {
-        setProducts((prevState) => [...prevState, product]);
+    const addProduct = (product: ProductDTO) => {
+        let productWithUniqueId: Product = {
+            id: 0,
+            title: product.title,
+            price: product.price,
+            imageUrl: product.imageUrl,
+        };
+
+        // Lazy unique id, if we never scramble the order of list, the biggest id will always be the furthest down.
+        if (products.length > 0) {
+            productWithUniqueId.id = products[products.length].id + 1;
+        }
+
+        setProducts((prevState) => [...prevState, productWithUniqueId]);
     };
     const removeProduct = (product: Product) => {
         setProducts((state) => {

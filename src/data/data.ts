@@ -1,10 +1,4 @@
-export interface Product {
-    id: number;
-    title: string;
-    price: number;
-    imageUrl: string;
-}
-export type ProductCreate = Omit<Product, "id">;
+import { Product } from "../context/ProductContext";
 
 const mockProducts: Product[] = [
     {
