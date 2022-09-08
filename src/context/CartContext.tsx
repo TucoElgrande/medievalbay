@@ -1,8 +1,13 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
 import { Product } from "../data/data";
 
+interface cartItem {
+    product: Product;
+    quantity: number;
+}
+
 interface ContextValue {
-    cart: Product[];
+    cart: cartItem[];
     addToCart: (product: Product) => void;
     removeAllCart: () => void;
     removeOneFromCart: (product: Product) => void;
@@ -14,24 +19,51 @@ interface Props {
 
 const CartContext = createContext<ContextValue>({
     cart: [],
-    addToCart: () => { },
-    removeAllCart: () => { },
-    removeOneFromCart: () => { },
-
+    addToCart: () => {},
+    removeAllCart: () => {},
+    removeOneFromCart: () => {},
 });
 
 function CartProvider({ children }: Props) {
-    const [cart, setCart] = useState<Product[]>([]);
+    const [cart, setCart] = useState<cartItem[]>([]);
 
     // Something something don't mutilate the array
 
     const addToCart = (product: Product) => {
-        setCart((prevState) => [...prevState, product]);
+        setCart((state) => {
+            const i = state.findIndex((p) => p.product.id === product.id);
+            if (i != -1) {
+                const stateCopy = [...state];
+                const updatedCartItem: cartItem = { ...state[i], quantity: state[i].quantity + 1 };
+                stateCopy.splice(i, 1, updatedCartItem);
+                return stateCopy;
+            } else {
+                let itm: cartItem = { product: product, quantity: 1 };
+                return [...state, itm];
+            }
+        });
+
+        // let itm: cartItem;
+        // setCart((prevState) => [...prevState, itm]);
     };
     const removeOneFromCart = (product: Product) => {
         setCart((state) => {
-            const i = state.findIndex((p) => p.id === product.id);
-            return state.filter((product, j) => i !== j);
+            const i = state.findIndex((p) => p.product.id === product.id);
+            if (i != -1) {
+                if (state[i].quantity > 1) {
+                    const stateCopy = [...state];
+                    const updatedCartItem: cartItem = {
+                        ...state[i],
+                        quantity: state[i].quantity - 1,
+                    };
+                    stateCopy.splice(i, 1, updatedCartItem);
+                    return stateCopy;
+                } else {
+                    return state.filter((p) => p.product.id !== product.id);
+                }
+            } else {
+                return [...state];
+            }
         });
     };
 
