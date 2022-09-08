@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import React from "react";
 import { Stack } from "@mui/system";
+import { Button } from "@mui/material";
+import { useCart } from "../context/CartContext";
 
 export interface Customer {
     id: number;
@@ -36,6 +38,7 @@ const CustomerSchema = Yup.object().shape<CustomerRecord>({
 });
 
 function CustomerForm(props: Props) {
+    const { cart, removeOneFromCart, removeAllCart } = useCart();
     const formik = useFormik<CustomerCreate>({
         initialValues: {
             fname: "",
@@ -49,6 +52,8 @@ function CustomerForm(props: Props) {
             } else {
                 // NEW
             }
+            alert("Thanks for your purchase");
+            removeAllCart();
             // TODO: Save product to state/api
             console.log("ON SUBMIT", values);
         },
@@ -92,9 +97,12 @@ function CustomerForm(props: Props) {
                 <Stack sx={{ width: "100%" }} spacing={2}>
                     <div>{formik.touched.fname && formik.errors.fname}</div>
                     <div>{formik.touched.lname && formik.errors.lname}</div>
-                    <div> {formik.touched.email && formik.errors.email}</div>
+                    <div>{formik.touched.email && formik.errors.email}</div>
                 </Stack>
-                <button type="submit">Validation button</button>
+                {/* <button type="submit">Validation button</button> */}
+                <Button variant="contained" color="success" type="submit">
+                    Confirm purchase
+                </Button>
             </div>
         </Box>
     );
