@@ -13,6 +13,7 @@ export interface ProductDTO {
     price: number;
     imageUrl: string;
 }
+export type createProduct = Omit<Product, "id">;
 
 interface ContextValue {
     products: Product[];
