@@ -42,9 +42,9 @@ mm.
 Ni ska vid presentationstillfället hålla i ett muntlig presentation inför klassen. Följande
 punkter skall förklaras under presentationen:
 
-- Genomgång av och presentation av det byggda systemet och dess UX.
-- Kortare genomgång av kodens struktur och flöde.
-- Vad som har fungera bra och vad som varit svårt under projektets gång.
+-   Genomgång av och presentation av det byggda systemet och dess UX.
+-   Kortare genomgång av kodens struktur och flöde.
+-   Vad som har fungera bra och vad som varit svårt under projektets gång.
 
 Uppgiftsbeskrivningen
 Det ni ska skapa är en klassisk e-handel sida som presenterar ett antal olika produkter.
@@ -90,23 +90,23 @@ bilder så det enkelt kan sparas i localstorage.
 
 **Krav för godkänt**
 
-- [x] 1. Git & GitHub har använts
-- [x] 2. Projektmappen innehåller en README.md fil - (läs ovan för mer info)
-- [x] 3. Uppgiften lämnas in i tid!
-- [x] 4. React, Typescript & ett komponentbibliotek ska används
-- [x] 5. React Router används för navigering
-- [ ] 6. Formulären vid utcheckningen ska gå att automatiskt fyllas i
-- [ ] 7. Samtliga fält ska ha valideringsregler
-- [ ] 8. Hemsidan ska vara fullt responsiv (ner till 360px)
-- [x] 9. Mockade produkter ska finnas i en egen fil och vara typade med ett TS interface
-- [ ] 10. Projektet skall läggas upp på Netlify eller liknande tjänst.
+-   [x] 1. Git & GitHub har använts
+-   [x] 2. Projektmappen innehåller en README.md fil - (läs ovan för mer info)
+-   [x] 3. Uppgiften lämnas in i tid!
+-   [x] 4. React, Typescript & ett komponentbibliotek ska används
+-   [x] 5. React Router används för navigering
+-   [x] 6. Formulären vid utcheckningen ska gå att automatiskt fyllas i
+-   [x] 7. Samtliga fält ska ha valideringsregler
+-   [ ] 8. Hemsidan ska vara fullt responsiv (ner till 360px)
+-   [x] 9. Mockade produkter ska finnas i en egen fil och vara typade med ett TS interface
+-   [ ] 10. Projektet skall läggas upp på Netlify eller liknande tjänst.
 
 **Krav för väl godkänt**
 
-- [ ] 11. Alla punkter för godkänt är uppfyllda
-- [ ] 12. Det finns en admin-sida där man kan ändra, lägga till eller ta bort produkter på sidan
-- [ ] 13. Samtliga produkter skall vara sparade i localstorage (om localstorage är tom då sidan
-      läses in behöver samtliga fördefinierade produkter sparas där)
+-   [ ] 11. Alla punkter för godkänt är uppfyllda
+-   [ ] 12. Det finns en admin-sida där man kan ändra, lägga till eller ta bort produkter på sidan
+-   [ ] 13. Samtliga produkter skall vara sparade i localstorage (om localstorage är tom då sidan
+        läses in behöver samtliga fördefinierade produkter sparas där)
 
 Do you have any questions or need something explained in English? - Please feel free to
 ask me during a lecture. Good luck!
