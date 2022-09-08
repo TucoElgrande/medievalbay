@@ -1,10 +1,15 @@
 import React, { CSSProperties } from "react";
 import { useCart } from "../context/CartContext";
 import { NavLink, Outlet } from "react-router-dom";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 import { Button } from "@mui/material";
 import { Product, useProduct } from "../context/ProductContext";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ProductForm from "./ProductForm";
+import Typography from "@mui/material/Typography";
 
 type Props = {
     product: Product;
@@ -16,7 +21,39 @@ const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons })
     const { addToCart, removeOneFromCart } = useCart();
     const { isAdmin, removeProduct } = useProduct();
 
-    console.log(cardClickable);
+    return (
+        <Card sx={{ maxWidth: 345 }}>
+            <CardMedia component="img" image={product.imageUrl} alt={product.title} />
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                    {product.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    Description
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button size="small">Add to cart</Button>
+                <Button size="small">Inspect item</Button>
+            </CardActions>
+            {isAdmin && (
+                <div>
+                    <ProductForm {...product} />
+                    <Button
+                        onClick={() => {
+                            removeProduct(product);
+                        }}
+                        variant="outlined"
+                        startIcon={<DeleteIcon />}
+                    >
+                        Delete
+                    </Button>
+                </div>
+            )}
+        </Card>
+    );
+
+    /* console.log(cardClickable);
     return (
         <div key={product.id}>
             <h3>{product.title}</h3>
@@ -45,7 +82,7 @@ const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons })
                 </div>
             )}
         </div>
-    );
+    ); */
 };
 
 interface LinkProps {
