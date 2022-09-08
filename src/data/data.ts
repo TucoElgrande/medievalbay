@@ -4,6 +4,8 @@ export interface Product {
     price: number;
     imageUrl: string;
 }
+export type ProductCreate = Omit<Product, "id">;
+
 const mockProducts: Product[] = [
     {
         id: 1,
