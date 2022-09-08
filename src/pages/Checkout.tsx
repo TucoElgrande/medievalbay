@@ -4,31 +4,33 @@ import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { currencyFormat } from "../utilities/currencyFormat";
 import CustomerForm from "../components/CustomerForm";
+import { isTemplateExpression } from "typescript";
 
 function Checkout() {
     const { cart, removeOneFromCart, removeAllCart } = useCart();
     let totalPrice = 0;
     cart.forEach((item) => {
-        totalPrice += item.product.price;
+        totalPrice += item.product.price * item.quantity;
     });
 
     return (
         <div>
             <h2>Checkout</h2>
             <div>
-                {cart.map((item) => (
+                {cart.map((cartItem) => (
                     <div>
                         <div>
                             <div>
-                                <p>{item.product.title}</p>
-                                <p>{currencyFormat(item.product.price)}</p>
-                                <img src={item.product.imageUrl}></img>
+                                <p>{cartItem.product.title}</p>
+                                <p> X {cartItem.quantity}</p>
+                                <p>{currencyFormat(cartItem.product.price)}</p>
+                                <img src={cartItem.product.imageUrl}></img>
                             </div>
                             <Button
                                 size="small"
                                 variant="outlined"
                                 onClick={() => {
-                                    removeOneFromCart(item.product);
+                                    removeOneFromCart(cartItem.product);
                                 }}
                             >
                                 Remove

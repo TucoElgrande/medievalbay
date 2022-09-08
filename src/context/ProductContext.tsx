@@ -8,12 +8,7 @@ export interface Product {
     imageUrl: string;
 }
 
-export interface ProductDTO {
-    title: string;
-    price: number;
-    imageUrl: string;
-}
-export type createProduct = Omit<Product, "id">;
+export type ProductDTO = Omit<Product, "id">;
 
 interface ContextValue {
     products: Product[];
