@@ -4,9 +4,9 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import React from "react";
 import { Stack } from "@mui/system";
-import { createProduct, Product } from "../context/ProductContext";
+import { ProductDTO, Product } from "../context/ProductContext";
 
-type ProductRecord = Record<keyof createProduct, Yup.AnySchema>;
+type ProductRecord = Record<keyof ProductDTO, Yup.AnySchema>;
 
 const ProductSchema = Yup.object().shape<ProductRecord>({
     title: Yup.string()
@@ -29,7 +29,7 @@ interface ProductForm {
 }
 
 function ProductForm(product?: Product) {
-    const formik = useFormik<createProduct>({
+    const formik = useFormik<ProductDTO>({
         initialValues: product || {
             title: "",
             price: 0,

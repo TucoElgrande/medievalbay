@@ -10,6 +10,11 @@ function Header() {
     const { cart } = useCart();
     const { isAdmin, toggleAdmin } = useProduct();
 
+    let cartItems: number = 0;
+    cart.forEach((e) => {
+        cartItems += e.quantity;
+    });
+
     return (
         <div>
             <header style={rootStyle}>
@@ -22,7 +27,7 @@ function Header() {
                     </NavLink>
 
                     <NavLink style={linkStyle} to="checkout">
-                        <Badge color="secondary" badgeContent={cart.length}>
+                        <Badge color="secondary" badgeContent={cartItems}>
                             <ShoppingCartIcon />
                         </Badge>
                     </NavLink>
