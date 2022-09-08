@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import mockProducts, { getProduct, getProducts, Product } from "../data/data";
+import { getProduct } from "../data/data";
 import ProductCardBrowse from "../components/ProductCardBrowse";
 
 function SpecificProducts() {
