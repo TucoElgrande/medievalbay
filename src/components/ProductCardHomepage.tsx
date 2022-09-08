@@ -1,5 +1,5 @@
 import React from "react";
-import { Product } from "../data/data";
+import { Product } from "../context/ProductContext";
 
 function ProductCardHomepage(product: Product) {
     return (
