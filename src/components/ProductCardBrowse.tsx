@@ -5,6 +5,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { Button } from "@mui/material";
 import { useProduct } from "../context/ProductContext";
 import DeleteIcon from "@mui/icons-material/Delete";
+import ProductForm from "./ProductForm";
 
 type Props = {
     product: Product;
@@ -18,30 +19,37 @@ const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons })
 
     console.log(cardClickable);
     return (
-        <div key={product.id}>
+        < div key={product.id} >
             <h3>{product.title}</h3>
             {buttons && <button onClick={() => addToCart(product)}> Add to cart</button>}
             {buttons && <button onClick={() => removeOneFromCart(product)}> Remove to cart</button>}
             <br></br>
-            {cardClickable ? (
-                <NavLink style={linkStyle} to={product.id.toString()}>
+            {
+                cardClickable ? (
+                    <NavLink style={linkStyle} to={product.id.toString()}>
+                        <img src={product.imageUrl} />
+                    </NavLink>
+                ) : (
                     <img src={product.imageUrl} />
-                </NavLink>
-            ) : (
-                <img src={product.imageUrl} />
-            )}
-            {isAdmin && (
-                <Button
-                    onClick={() => {
-                        removeProduct(product);
-                    }}
-                    variant="outlined"
-                    startIcon={<DeleteIcon />}
-                >
-                    Delete
-                </Button>
-            )}
-        </div>
+                )
+            }
+            {
+                isAdmin && (
+                    <div>
+                        <ProductForm {...product} />
+                        <Button
+                            onClick={() => {
+                                removeProduct(product);
+                            }}
+                            variant="outlined"
+                            startIcon={<DeleteIcon />}
+                        >
+                            Delete
+                        </Button>
+                    </div>
+                )
+            }
+        </div >
     );
 };
 
