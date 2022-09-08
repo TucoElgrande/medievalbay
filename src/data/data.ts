@@ -1,6 +1,5 @@
 import { Product } from "../context/ProductContext";
 
-//TODO, export these into like, an initzialize etc etc etc.
 const mockProducts: Product[] = [
     {
         id: 1,
