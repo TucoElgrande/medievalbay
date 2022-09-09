@@ -1,4 +1,4 @@
-import { Product } from "../context/ProductContext";
+import { Product, useProduct } from "../context/ProductContext";
 
 const mockProducts: Product[] = [
     {
@@ -22,11 +22,13 @@ const mockProducts: Product[] = [
 ];
 
 export function getProducts() {
-    return mockProducts;
+    const { products } = useProduct();
+    return products;
 }
 
 export function getProduct(number: number) {
-    return mockProducts.find((i) => i.id === number);
+    const { products } = useProduct();
+    return products.find((i) => i.id === number);
 }
 
 export default mockProducts;

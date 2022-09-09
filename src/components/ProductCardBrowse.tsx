@@ -16,7 +16,6 @@ const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons })
     const { addToCart, removeOneFromCart } = useCart();
     const { isAdmin, removeProduct } = useProduct();
 
-    console.log(cardClickable);
     return (
         <div key={product.id}>
             <h3>{product.title}</h3>

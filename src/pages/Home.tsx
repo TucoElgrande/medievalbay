@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import ProductCardHomepage from "../components/ProductCardHomepage";
+import { useProduct } from "../context/ProductContext";
 import mockData from "../data/data";
 import "./Home.css";
 
 function Home() {
-    const [product] = useState(mockData);
+    const { products } = useProduct();
 
     return (
         <div>
@@ -37,7 +38,7 @@ function Home() {
             </div>
 
             <div className="flex-container center-items">
-                {product.map((product) => (
+                {products.map((product) => (
                     <ProductCardHomepage {...product} />
                 ))}
             </div>
