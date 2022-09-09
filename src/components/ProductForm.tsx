@@ -10,11 +10,12 @@ type ProductRecord = Record<keyof ProductDTO, Yup.AnySchema>;
 
 const ProductSchema = Yup.object().shape<ProductRecord>({
     title: Yup.string()
-        .min(2, "Title must be longer than 2 letters")
+        .min(1, "")
         .max(25, "max 25 letters")
         .required("First name field cannot be empty"),
     price: Yup.number()
         .min(1, "Cost must be more than 0")
+        .max(10000000)
         .strict()
         .required("Price field cannot be empty"),
     imageUrl: Yup.string()
@@ -75,7 +76,7 @@ function ProductForm(product?: Product) {
                 id="outlined-basic"
                 label="ImageURL"
                 variant="outlined"
-                placeholder="ImageURL"
+                placeholder="ImageURL(Optional)"
                 type="text"
                 name="imageUrl"
                 value={formik.values.imageUrl.trim()}
