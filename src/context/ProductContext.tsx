@@ -57,7 +57,7 @@ function ProductProvider({ children }: Props) {
 
     const addProduct = (product: ProductDTO) => {
         let productWithUniqueId: Product = {
-            id: 0,
+            id: 1,
             title: product.title,
             price: product.price,
             imageUrl: product.imageUrl,

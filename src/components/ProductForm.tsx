@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import React from "react";
 import { Stack } from "@mui/system";
 import { ProductDTO, Product, useProduct } from "../context/ProductContext";
+import { getProduct } from "../data/data";
 
 type ProductRecord = Record<keyof ProductDTO, Yup.AnySchema>;
 
@@ -32,8 +33,9 @@ interface ProductForm {
 function ProductForm(product?: Product) {
     const { products, addProduct, editProduct } = useProduct();
 
-    const formik = useFormik<ProductDTO>({
+    const formik = useFormik<Product>({
         initialValues: product || {
+            id: 0,
             title: "",
             price: 0,
             imageUrl: "",
@@ -41,12 +43,13 @@ function ProductForm(product?: Product) {
         validateOnChange: true,
         validationSchema: ProductSchema,
         onSubmit: (values) => {
-            if (product) {
+            if (products.find((p) => p.id == values.id)) {
+                editProduct(values, values.id);
             } else {
-                // NEW
+                addProduct(values);
             }
             // TODO: Save product to state/api
-            editProduct(values, 1);
+            console.log(values);
         },
     });
 
