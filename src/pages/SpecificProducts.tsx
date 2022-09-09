@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProduct } from "../data/data";
 import ProductCardBrowse from "../components/ProductCardBrowse";
+import { useProduct } from "../context/ProductContext";
 
 function SpecificProducts() {
     const params = useParams<{ productId: string }>();
