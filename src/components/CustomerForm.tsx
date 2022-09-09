@@ -5,6 +5,8 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import React from "react";
 import { Stack } from "@mui/system";
+import { Button } from "@mui/material";
+import { useCart } from "../context/CartContext";
 import { maxHeaderSize } from "http";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -48,6 +50,7 @@ const CustomerSchema = Yup.object().shape<CustomerRecord>({
 });
 
 function CustomerForm(props: Props) {
+    const { cart, removeOneFromCart, removeAllCart } = useCart();
     const formik = useFormik<CustomerCreate>({
         initialValues: {
             fname: "",
@@ -63,6 +66,8 @@ function CustomerForm(props: Props) {
             } else {
                 // NEW
             }
+            alert("Thanks for your purchase");
+            removeAllCart();
             // TODO: Save product to state/api
             console.log("ON SUBMIT", values);
         },
@@ -131,7 +136,10 @@ function CustomerForm(props: Props) {
                     <div> {formik.touched.phone && formik.errors.phone}</div>
 
                 </Stack>
-                <button type="submit">Validation button</button>
+                {/* <button type="submit">Validation button</button> */}
+                <Button variant="contained" color="success" type="submit">
+                    Confirm purchase
+                </Button>
             </div>
         </Box>
     );
