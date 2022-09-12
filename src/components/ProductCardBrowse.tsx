@@ -26,7 +26,13 @@ const ProductCardBrowse: React.FC<Props> = ({ product, inspect, cardClickable, b
 
     return (
         <Card sx={{ maxWidth: 270 }}>
-            <img src={product.imageUrl} className="product-browse-img" />
+            {cardClickable && (
+                <NavLink to={"/products/" + product.id.toString()}>
+                    <img src={product.imageUrl} className="product-browse-img" />
+                </NavLink>
+            )}
+            {!cardClickable && <img src={product.imageUrl} className="product-browse-img" />}
+
             <CardContent>
                 <Typography
                     gutterBottom
@@ -42,13 +48,13 @@ const ProductCardBrowse: React.FC<Props> = ({ product, inspect, cardClickable, b
                     {product.description}
                 </Typography>
             </CardContent>
-            {!isAdmin && (
+            {!isAdmin && buttons && (
                 <CardActions>
                     <Button size="large" onClick={() => addToCart(product)}>
                         Add to cart
                     </Button>
                     {inspect && (
-                        <NavLink style={linkStyle} to={product.id.toString()}>
+                        <NavLink style={linkStyle} to={"/products/" + product.id.toString()}>
                             <Button size="small">Inspect item</Button>
                         </NavLink>
                     )}
@@ -56,7 +62,7 @@ const ProductCardBrowse: React.FC<Props> = ({ product, inspect, cardClickable, b
             )}
             {isAdmin && (
                 <div>
-                    <ProductForm {...product} />
+                    <ProductForm product={{ ...product }} buttonName="Edit" />
                     <Button
                         onClick={() => {
                             removeProduct(product);

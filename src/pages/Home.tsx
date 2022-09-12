@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import ProductCardBrowse from "../components/ProductCardBrowse";
 import ProductCardHomepage from "../components/ProductCardHomepage";
 import { useProduct } from "../context/ProductContext";
+import { getAmountOfProducts } from "../data/data";
 import "./Home.css";
 
 function Home() {
-    const { products } = useProduct();
+    const products = getAmountOfProducts(2);
 
     return (
         <div>
@@ -38,7 +40,7 @@ function Home() {
 
             <div className="flex-container flex-wrap products-main center-items center-non-flex">
                 {products.map((product) => (
-                    <ProductCardHomepage {...product} />
+                    <ProductCardBrowse key={product.id} product={product} cardClickable={true} />
                 ))}
             </div>
         </div>
