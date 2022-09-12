@@ -16,9 +16,10 @@ type Props = {
     product: Product;
     cardClickable?: boolean;
     buttons?: boolean;
+    inspect?: boolean;
 };
 
-const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons }) => {
+const ProductCardBrowse: React.FC<Props> = ({ product, inspect, cardClickable, buttons }) => {
     const { addToCart } = useCart();
     const { isAdmin, removeProduct } = useProduct();
 
@@ -42,9 +43,11 @@ const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons })
                     <Button size="large" onClick={() => addToCart(product)}>
                         Add to cart
                     </Button>
-                    <NavLink style={linkStyle} to={product.id.toString()}>
-                        <Button size="small">Inspect item</Button>
-                    </NavLink>
+                    {inspect && (
+                        <NavLink style={linkStyle} to={product.id.toString()}>
+                            <Button size="small">Inspect item</Button>
+                        </NavLink>
+                    )}
                 </CardActions>
             )}
             {isAdmin && (

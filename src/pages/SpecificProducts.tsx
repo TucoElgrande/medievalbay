@@ -15,7 +15,7 @@ function SpecificProducts() {
     } else {
         return (
             <div className="products-main center-non-flex">
-                <ProductCardBrowse product={product} />
+                <ProductCardBrowse product={product} inspect={false} />
             </div>
         );
     }

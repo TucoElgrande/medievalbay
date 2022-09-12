@@ -13,12 +13,7 @@ function Products() {
             <div className="flex-container center-items">
                 {products.map((product) => (
                     <div className="product-margin">
-                        <ProductCardBrowse
-                            key={product.id}
-                            product={product}
-                            buttons={true}
-                            cardClickable={true}
-                        />
+                        <ProductCardBrowse key={product.id} product={product} inspect={true} />
                     </div>
                 ))}
             </div>
