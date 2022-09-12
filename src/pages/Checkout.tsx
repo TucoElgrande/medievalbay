@@ -14,11 +14,19 @@ export function Checkout() {
     };
 
     let totalPrice = 0;
+    let totalProducts = 0;
     cart.forEach((item) => {
         totalPrice += item.product.price * item.quantity;
+        totalProducts += 1;
     });
 
-    if (!customer) {
+    if (totalProducts <= 0 && !customer) {
+        return (
+            <div className="products-main center-non-flex">
+                <h2>INGA PRODUKTER HITTADES</h2>
+            </div>
+        );
+    } else if (!customer) {
         return (
             <div className="products-main center-non-flex">
                 <h2>Checkout</h2>
