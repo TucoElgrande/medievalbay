@@ -37,7 +37,7 @@ function Home() {
                 <h2 className="">Featured Items</h2>
             </div>
 
-            <div className="flex-container center-items">
+            <div className="flex-container products-main center-non-flex">
                 {products.map((product) => (
                     <ProductCardHomepage {...product} />
                 ))}
