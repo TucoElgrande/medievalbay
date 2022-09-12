@@ -13,7 +13,7 @@ function Checkout() {
     });
 
     return (
-        <div className="products-main center-non-flex">
+        <div className="main-content center-non-flex">
             <h2>Checkout</h2>
             <div>
                 {cart.map((cartItem) => (
@@ -28,9 +28,9 @@ function Checkout() {
                                     {currencyFormat(cartItem.product.price * cartItem.quantity)}
                                 </p>
                                 <p>{currencyFormat(cartItem.product.price)}</p>
-                                <img 
-                                  src={cartItem.product.imageUrl}
-                                  className="product-browse-img"
+                                <img
+                                    src={cartItem.product.imageUrl}
+                                    className="product-browse-img"
                                 ></img>
                             </div>
                             <Button
@@ -68,7 +68,7 @@ function Checkout() {
                 {totalPrice != 0}
                 {totalPrice != 0 && <p> Total: {currencyFormat(totalPrice)}</p>}
             </div>
-                                
+
             <Button variant="outlined" color="error" onClick={() => removeAllCart()}>
                 Clear cart
             </Button>

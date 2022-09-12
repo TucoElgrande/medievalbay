@@ -8,7 +8,7 @@ import "./Products.css";
 function Products() {
     const { products, isAdmin } = useProduct();
     return (
-        <div className="products-main center-non-flex">
+        <div className="main-content center-non-flex">
             {isAdmin && <ProductForm id={0} title={""} price={0} imageUrl={""} />}
             <div className="flex-container flex-wrap center-items">
                 {products.map((product) => (

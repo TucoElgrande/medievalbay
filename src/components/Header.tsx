@@ -8,7 +8,6 @@ import { useProduct } from "../context/ProductContext";
 
 function Header() {
     const { cart } = useCart();
-    const { isAdmin, toggleAdmin } = useProduct();
 
     let cartItems: number = 0;
     cart.forEach((e) => {
@@ -32,7 +31,6 @@ function Header() {
                         </Badge>
                     </NavLink>
                 </div>
-                <Switch checked={isAdmin} onChange={toggleAdmin} />
             </header>
             <Outlet />
         </div>

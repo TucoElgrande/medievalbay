@@ -14,7 +14,7 @@ function SpecificProducts() {
         //TODO ^ + go home button, possible be made into component?
     } else {
         return (
-            <div className="products-main center-non-flex">
+            <div className="main-content center-non-flex">
                 <ProductCardBrowse product={product} inspect={false} />
             </div>
         );

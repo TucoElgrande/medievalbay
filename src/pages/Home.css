@@ -3,8 +3,9 @@ body {
 }
 
 .text {
-    max-width: 40%;
-    margin: 6rem 6rem 3rem 6rem;
+    max-width: 60%;
+    margin: 1rem 6rem;
+    background-color: white;
 }
 
 .flex-container {
@@ -13,6 +14,14 @@ body {
 
 .flex-wrap {
     flex-wrap: wrap;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.text-box {
+    flex-wrap: nowrap;
 }
 
 .center-items {
@@ -36,16 +45,21 @@ body {
     text-align: center;
 }
 
-@media (max-width: 960px) {
-    .text {
-        max-width: 80%;
-        margin: 1rem 3rem 0 3rem;
+.admin-switch {
+    background-color: rgb(173, 173, 173);
+    border-radius: 100rem;
+}
+
+@media (max-width: 1600px) {
+    .text-box {
+        flex-wrap: wrap;
     }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 960px) {
     .text {
-        max-width: 80%;
-        margin: 1rem;
+        flex-basis: auto;
+        max-width: 100%;
+        margin: 1rem 0;
     }
 }
