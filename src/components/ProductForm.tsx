@@ -21,11 +21,11 @@ const ProductSchema = Yup.object().shape<ProductRecord>({
   imageUrl: Yup.string()
     .url()
     .min(1, "Minimum one letter")
-    .max(100, "Maximum 100 letters")
+    .max(200, "Maximum 100 letters")
     .notRequired(),
   description: Yup.string()
     .min(1)
-    .max(200)
+    .max(1000)
     .notRequired(),
 });
 
@@ -51,10 +51,10 @@ function ProductForm(product?: Product) {
         editProduct(values, values.id);
       } else {
         addProduct(values);
+        resetForm({
+          values: { id: 0, title: "", price: 0, imageUrl: "", description: "" },
+        });
       }
-      resetForm({
-        values: { id: 0, title: "", price: 0, imageUrl: "", description: "" },
-      });
     },
   });
 
