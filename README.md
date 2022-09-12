@@ -104,8 +104,8 @@ bilder så det enkelt kan sparas i localstorage.
 **Krav för väl godkänt**
 
 -   [ ] 11. Alla punkter för godkänt är uppfyllda
--   [ ] 12. Det finns en admin-sida där man kan ändra, lägga till eller ta bort produkter på sidan
--   [ ] 13. Samtliga produkter skall vara sparade i localstorage (om localstorage är tom då sidan
+-   [x] 12. Det finns en admin-sida där man kan ändra, lägga till eller ta bort produkter på sidan
+-   [x] 13. Samtliga produkter skall vara sparade i localstorage (om localstorage är tom då sidan
         läses in behöver samtliga fördefinierade produkter sparas där)
 
 Do you have any questions or need something explained in English? - Please feel free to
