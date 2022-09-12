@@ -58,33 +58,31 @@ function ProductForm(product?: Product) {
     },
   });
 
-  return (
-    <Box
-      component="form"
-      onSubmit={formik.handleSubmit}
-      sx={{ margin: "1rem" }}
-    >
-      <TextField
-        id="outlined-basic"
-        label="Title"
-        variant="outlined"
-        placeholder="Title"
-        type="text"
-        name="title"
-        value={formik.values.title}
-        onChange={formik.handleChange}
-      />
+    return (
+        <Box component="form" onSubmit={formik.handleSubmit} sx={{ margin: "1rem" }}>
+            <TextField
+                id="outlined-basic"
+                label="Title"
+                variant="outlined"
+                placeholder="Title"
+                type="text"
+                name="title"
+                value={formik.values.title}
+                onChange={formik.handleChange}
+                sx={{ marginBottom: "1rem" }}
+            />
 
-      <TextField
-        id="outlined-basic"
-        label="Price"
-        variant="outlined"
-        placeholder="Price"
-        type="number"
-        name="price"
-        value={formik.values.price}
-        onChange={formik.handleChange}
-      />
+            <TextField
+                id="outlined-basic"
+                label="Price"
+                variant="outlined"
+                placeholder="Price"
+                type="number"
+                name="price"
+                value={formik.values.price}
+                onChange={formik.handleChange}
+                sx={{ marginBottom: "1rem" }}
+            />
 
       <TextField
         id="outlined-basic"
@@ -95,6 +93,7 @@ function ProductForm(product?: Product) {
         name="imageUrl"
         value={formik.values.imageUrl.trim()}
         onChange={formik.handleChange}
+        sx={{ marginBottom: "1rem" }}
       />
       <TextField
         id="outlined-basic"

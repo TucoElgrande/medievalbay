@@ -3,26 +3,33 @@ body {
 }
 
 .text {
-    max-width: 30%;
+    max-width: 40%;
     margin: 6rem 6rem 3rem 6rem;
 }
 
 .flex-container {
     display: flex;
+}
+
+.flex-wrap {
     flex-wrap: wrap;
-}
-
-.flex-item-two {
-    flex: 50%;
-}
-
-.flex-item-one {
-    flex: 100%;
 }
 
 .center-items {
     justify-content: center;
     align-items: center;
+}
+
+.flex-item-four {
+    flex-basis: 25%;
+}
+
+.flex-item-two {
+    flex-basis: 50%;
+}
+
+.flex-item-one {
+    flex-basis: 100%;
 }
 
 .text-align-center {

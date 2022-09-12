@@ -1,0 +1,17 @@
+.product-browse-img {
+    margin: 0.5rem;
+    width: 15rem;
+    height: 15rem;
+}
+
+.products-main {
+    width: 70%;
+}
+
+.product-margin {
+    margin: 2rem;
+}
+
+.center-non-flex {
+    margin: auto;
+}

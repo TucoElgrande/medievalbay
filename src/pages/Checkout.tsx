@@ -1,10 +1,8 @@
 import React from "react";
 import { useCart } from "../context/CartContext";
 import Button from "@mui/material/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { currencyFormat } from "../utilities/currencyFormat";
 import CustomerForm from "../components/CustomerForm";
-import { isTemplateExpression } from "typescript";
 
 function Checkout() {
     const { cart, removeOneFromCart, removeAllCart, addToCart } = useCart();
@@ -15,7 +13,7 @@ function Checkout() {
     });
 
     return (
-        <div>
+        <div className="products-main center-non-flex">
             <h2>Checkout</h2>
             <div>
                 {cart.map((cartItem) => (
@@ -30,7 +28,10 @@ function Checkout() {
                                     {currencyFormat(cartItem.product.price * cartItem.quantity)}
                                 </p>
                                 <p>{currencyFormat(cartItem.product.price)}</p>
-                                <img src={cartItem.product.imageUrl}></img>
+                                <img 
+                                  src={cartItem.product.imageUrl}
+                                  className="product-browse-img"
+                                ></img>
                             </div>
                             <Button
                                 size="small"
@@ -53,6 +54,15 @@ function Checkout() {
                                 +
                             </Button>
                         </div>
+                        <Button
+                            size="small"
+                            variant="outlined"
+                            onClick={() => {
+                                removeOneFromCart(cartItem.product);
+                            }}
+                        >
+                            Remove
+                        </Button>
                     </div>
                 ))}
                 {totalPrice != 0}
