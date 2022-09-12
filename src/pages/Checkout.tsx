@@ -1,10 +1,8 @@
 import React from "react";
 import { useCart } from "../context/CartContext";
 import Button from "@mui/material/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { currencyFormat } from "../utilities/currencyFormat";
 import CustomerForm from "../components/CustomerForm";
-import { isTemplateExpression } from "typescript";
 
 function Checkout() {
     const { cart, removeOneFromCart, removeAllCart } = useCart();
@@ -20,22 +18,23 @@ function Checkout() {
                 {cart.map((cartItem) => (
                     <div>
                         <div>
-                            <div>
-                                <p>{cartItem.product.title}</p>
-                                <p> X {cartItem.quantity}</p>
-                                <p>{currencyFormat(cartItem.product.price)}</p>
-                                <img src={cartItem.product.imageUrl}></img>
-                            </div>
-                            <Button
-                                size="small"
-                                variant="outlined"
-                                onClick={() => {
-                                    removeOneFromCart(cartItem.product);
-                                }}
-                            >
-                                Remove
-                            </Button>
+                            <p>{cartItem.product.title}</p>
+                            <p> X {cartItem.quantity}</p>
+                            <p>{currencyFormat(cartItem.product.price)}</p>
+                            <img
+                                src={cartItem.product.imageUrl}
+                                className="product-browse-img"
+                            ></img>
                         </div>
+                        <Button
+                            size="small"
+                            variant="outlined"
+                            onClick={() => {
+                                removeOneFromCart(cartItem.product);
+                            }}
+                        >
+                            Remove
+                        </Button>
                     </div>
                 ))}
                 {totalPrice != 0}
