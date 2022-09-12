@@ -35,16 +35,6 @@ function Checkout() {
                             <Button
                                 size="small"
                                 variant="contained"
-                                color="error"
-                                onClick={() => {
-                                    removeOneFromCart(cartItem.product);
-                                }}
-                            >
-                                -
-                            </Button>
-                            <Button
-                                size="small"
-                                variant="contained"
                                 color="success"
                                 onClick={() => {
                                     addToCart(cartItem.product);
@@ -52,6 +42,16 @@ function Checkout() {
                             >
                                 +
                             </Button>
+                            <Button
+                                size="small"
+                                variant="contained"
+                                color="error"
+                                onClick={() => {
+                                    removeOneFromCart(cartItem.product);
+                                }}
+                            >
+                                -
+                            </Button>           
                         </div>
                     </div>
                 ))}
@@ -62,7 +62,7 @@ function Checkout() {
             <Button variant="outlined" color="error" onClick={() => removeAllCart()}>
                 Clear cart
             </Button>
-            <CustomerForm></CustomerForm>
+            {cart.length > 0 && (<CustomerForm></CustomerForm>)}
         </div>
     );
 }
