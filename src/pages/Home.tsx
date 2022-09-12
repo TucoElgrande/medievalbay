@@ -8,7 +8,7 @@ function Home() {
 
     return (
         <div>
-            <div className="flex-container center-items">
+            <div className="flex-container center-items products-main center-non-flex">
                 <div className="flex-item-two text text-align-center">
                     <h2>MediEvalBay</h2>
                     <p>
