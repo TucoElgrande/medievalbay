@@ -10,7 +10,6 @@ import { Button, Typography } from "@mui/material";
 import { Product, useProduct } from "../context/ProductContext";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ProductForm from "./ProductForm";
-import Typography from "@mui/material/Typography";
 import { ProductionQuantityLimits } from "@mui/icons-material";
 import "../pages/Products.css";
 
@@ -75,15 +74,15 @@ const ProductCardBrowse: React.FC<Props> = ({ product, inspect, cardClickable, b
 };
 
 interface LinkProps {
-  isActive: boolean;
+    isActive: boolean;
 }
 
 const linkStyle = ({ isActive }: LinkProps): CSSProperties => ({
-  padding: "0.4rem",
-  textDecoration: "none",
-  borderRadius: "1rem",
-  color: "black",
-  background: isActive ? "#CCCCFF" : undefined,
+    padding: "0.4rem",
+    textDecoration: "none",
+    borderRadius: "1rem",
+    color: "black",
+    background: isActive ? "#CCCCFF" : undefined,
 });
 
 export default ProductCardBrowse;
