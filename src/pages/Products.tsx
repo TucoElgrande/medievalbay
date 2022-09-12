@@ -10,7 +10,7 @@ function Products() {
     return (
         <div className="products-main center-non-flex">
             {isAdmin && <ProductForm id={0} title={""} price={0} imageUrl={""} />}
-            <div className="flex-container center-items">
+            <div className="flex-container flex-wrap center-items">
                 {products.map((product) => (
                     <div className="product-margin">
                         <ProductCardBrowse key={product.id} product={product} inspect={true} />
