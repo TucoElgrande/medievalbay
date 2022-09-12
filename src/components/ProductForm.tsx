@@ -4,17 +4,19 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import React from "react";
 import { Stack } from "@mui/system";
-import { ProductDTO, Product } from "../context/ProductContext";
+import { ProductDTO, Product, useProduct } from "../context/ProductContext";
+import { getProduct } from "../data/data";
 
 type ProductRecord = Record<keyof ProductDTO, Yup.AnySchema>;
 
 const ProductSchema = Yup.object().shape<ProductRecord>({
     title: Yup.string()
-        .min(2, "Title must be longer than 2 letters")
+        .min(1, "")
         .max(25, "max 25 letters")
         .required("First name field cannot be empty"),
     price: Yup.number()
         .min(1, "Cost must be more than 0")
+        .max(10000000)
         .strict()
         .required("Price field cannot be empty"),
     imageUrl: Yup.string()
@@ -29,8 +31,11 @@ interface ProductForm {
 }
 
 function ProductForm(product?: Product) {
-    const formik = useFormik<ProductDTO>({
+    const { products, addProduct, editProduct } = useProduct();
+
+    const formik = useFormik<Product>({
         initialValues: product || {
+            id: 0,
             title: "",
             price: 0,
             imageUrl: "",
@@ -38,12 +43,13 @@ function ProductForm(product?: Product) {
         validateOnChange: true,
         validationSchema: ProductSchema,
         onSubmit: (values) => {
-            if (product) {
+            if (products.find((p) => p.id == values.id)) {
+                editProduct(values, values.id);
             } else {
-                // NEW
+                addProduct(values);
             }
             // TODO: Save product to state/api
-            console.log("ON SUBMIT", values);
+            console.log(values);
         },
     });
 
@@ -77,7 +83,7 @@ function ProductForm(product?: Product) {
                 id="outlined-basic"
                 label="ImageURL"
                 variant="outlined"
-                placeholder="ImageURL"
+                placeholder="ImageURL(Optional)"
                 type="text"
                 name="imageUrl"
                 value={formik.values.imageUrl.trim()}
