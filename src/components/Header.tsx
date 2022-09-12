@@ -17,7 +17,7 @@ function Header() {
     return (
         <div>
             <header style={rootStyle}>
-                <div>
+                <div className="center-non-flex main-content">
                     <NavLink style={linkStyle} to="">
                         🤦‍♀️
                     </NavLink>
@@ -41,7 +41,7 @@ const rootStyle: CSSProperties = {
     display: "flex",
     justifyContent: "space-between",
     background: "hotpink",
-    padding: "0.4rem 1rem",
+    padding: "0.4rem 0",
 };
 
 interface LinkProps {

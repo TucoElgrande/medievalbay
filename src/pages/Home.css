@@ -45,6 +45,10 @@ body {
     text-align: center;
 }
 
+.white-bg {
+    background-color: white;
+}
+
 .admin-switch {
     background-color: rgb(173, 173, 173);
     border-radius: 100rem;

@@ -1,6 +1,6 @@
 .product-browse-img {
     margin: 0.5rem;
-    width: 15rem;
+    max-width: 15rem;
     min-height: 5rem;
     max-height: 40rem;
 }

@@ -48,7 +48,12 @@ function Home() {
                 </div>
             </div>
 
-            <Switch checked={isAdmin} onChange={toggleAdmin} className="admin-switch" />
+            <Card className="white-bg flex-container center-items flex-direction-column">
+                <p>__________________________________</p>
+                <p>Admin mode</p>
+                <Switch checked={isAdmin} onChange={toggleAdmin} className="admin-switch" />
+                <p>__________________________________</p>
+            </Card>
 
             <div className="text-align-center">
                 <h2>Featured Items</h2>
