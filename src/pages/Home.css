@@ -9,7 +9,15 @@ body {
 
 .flex-container {
     display: flex;
+}
+
+.flex-wrap {
     flex-wrap: wrap;
+}
+
+.center-items {
+    justify-content: center;
+    align-items: center;
 }
 
 .flex-item-four {
@@ -22,11 +30,6 @@ body {
 
 .flex-item-one {
     flex-basis: 100%;
-}
-
-.center-items {
-    justify-content: center;
-    align-items: center;
 }
 
 .text-align-center {
