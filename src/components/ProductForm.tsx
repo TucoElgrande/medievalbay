@@ -58,6 +58,7 @@ function ProductForm(product?: Product) {
                 name="title"
                 value={formik.values.title.trim()}
                 onChange={formik.handleChange}
+                sx={{ marginBottom: "1rem" }}
             />
 
             <TextField
@@ -69,6 +70,7 @@ function ProductForm(product?: Product) {
                 name="price"
                 value={formik.values.price}
                 onChange={formik.handleChange}
+                sx={{ marginBottom: "1rem" }}
             />
 
             <TextField

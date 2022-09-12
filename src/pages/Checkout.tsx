@@ -14,7 +14,7 @@ function Checkout() {
     });
 
     return (
-        <div>
+        <div className="products-main center-non-flex">
             <h2>Checkout</h2>
             <div>
                 {cart.map((cartItem) => (

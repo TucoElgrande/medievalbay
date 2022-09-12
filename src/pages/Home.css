@@ -12,12 +12,16 @@ body {
     flex-wrap: wrap;
 }
 
+.flex-item-four {
+    flex-basis: 25%;
+}
+
 .flex-item-two {
-    flex: 50%;
+    flex-basis: 50%;
 }
 
 .flex-item-one {
-    flex: 100%;
+    flex-basis: 100%;
 }
 
 .center-items {

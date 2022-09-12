@@ -1,8 +1,53 @@
 body {
     margin: 0;
 }
-img {
-    margin: 0.5rem;
-    width: 10rem;
-    height: 10rem;
+
+.page-background {
+    position: fixed;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.page-content-bg {
+    background-color: white;
+    bottom: 0;
+    margin: auto;
+    height: 100%;
+    width: 70%;
+}
+
+.bg-image1 {
+    transform: scaleX(-1);
+    padding: 0;
+    height: 100%;
+    width: 50rem;
+    object-fit: cover;
+    position: fixed;
+    bottom: 0;
+    left: -10rem;
+    z-index: -2;
+}
+
+.bg-image2 {
+    transform: scaleX(-1);
+    padding: 0;
+    height: 100%;
+    width: 100rem;
+    object-fit: cover;
+    position: fixed;
+    bottom: 0;
+    right: -60rem;
+    z-index: -2;
+}
+
+@media (max-width: 1390px) {
+    .bg-image1 {
+        left: -2rem;
+    }
+
+    .bg-image2 {
+        right: -2rem;
+    }
 }

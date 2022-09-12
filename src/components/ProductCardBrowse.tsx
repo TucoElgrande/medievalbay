@@ -10,6 +10,7 @@ import { Product, useProduct } from "../context/ProductContext";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ProductForm from "./ProductForm";
 import Typography from "@mui/material/Typography";
+import "../pages/Products.css";
 
 type Props = {
     product: Product;
@@ -18,24 +19,38 @@ type Props = {
 };
 
 const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons }) => {
-    const { addToCart, removeOneFromCart } = useCart();
+    const { addToCart } = useCart();
     const { isAdmin, removeProduct } = useProduct();
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia component="img" image={product.imageUrl} alt={product.title} />
+        <Card sx={{ maxWidth: 270 }}>
+            {cardClickable ? (
+                <NavLink style={linkStyle} to={product.id.toString()}>
+                    <img src={product.imageUrl} className="product-browse-img" />
+                </NavLink>
+            ) : (
+                <img src={product.imageUrl} className="product-browse-img" />
+            )}
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    sx={{
+                        textAlign: "center",
+                    }}
+                >
                     {product.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Description
-                </Typography>
             </CardContent>
-            <CardActions>
-                <Button size="small">Add to cart</Button>
-                <Button size="small">Inspect item</Button>
-            </CardActions>
+            {!isAdmin && (
+                <CardActions>
+                    <Button size="large" onClick={() => addToCart(product)}>
+                        Add to cart
+                    </Button>
+                    <Button size="small">Inspect item</Button>
+                </CardActions>
+            )}
             {isAdmin && (
                 <div>
                     <ProductForm {...product} />
@@ -45,6 +60,7 @@ const ProductCardBrowse: React.FC<Props> = ({ product, cardClickable, buttons })
                         }}
                         variant="outlined"
                         startIcon={<DeleteIcon />}
+                        sx={{ textAlign: "center" }}
                     >
                         Delete
                     </Button>
