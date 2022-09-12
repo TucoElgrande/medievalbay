@@ -1,15 +1,17 @@
 import React, { CSSProperties } from "react";
 import { useCart } from "../context/CartContext";
 import { NavLink, Outlet } from "react-router-dom";
+
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Product, useProduct } from "../context/ProductContext";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ProductForm from "./ProductForm";
 import Typography from "@mui/material/Typography";
+import { ProductionQuantityLimits } from "@mui/icons-material";
 import "../pages/Products.css";
 
 type Props = {
@@ -20,7 +22,7 @@ type Props = {
 };
 
 const ProductCardBrowse: React.FC<Props> = ({ product, inspect, cardClickable, buttons }) => {
-    const { addToCart } = useCart();
+    const { addToCart, removeOneFromCart } = useCart();
     const { isAdmin, removeProduct } = useProduct();
 
     return (
@@ -36,6 +38,9 @@ const ProductCardBrowse: React.FC<Props> = ({ product, inspect, cardClickable, b
                     }}
                 >
                     {product.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    {product.description}
                 </Typography>
             </CardContent>
             {!isAdmin && (
@@ -70,15 +75,15 @@ const ProductCardBrowse: React.FC<Props> = ({ product, inspect, cardClickable, b
 };
 
 interface LinkProps {
-    isActive: boolean;
+  isActive: boolean;
 }
 
 const linkStyle = ({ isActive }: LinkProps): CSSProperties => ({
-    padding: "0.4rem",
-    textDecoration: "none",
-    borderRadius: "1rem",
-    color: "black",
-    background: isActive ? "#CCCCFF" : undefined,
+  padding: "0.4rem",
+  textDecoration: "none",
+  borderRadius: "1rem",
+  color: "black",
+  background: isActive ? "#CCCCFF" : undefined,
 });
 
 export default ProductCardBrowse;
