@@ -5,6 +5,10 @@
     max-height: 40rem;
 }
 
+.specific-product-browse-img {
+    width: 50%;
+}
+
 .main-content {
     width: 70%;
 }

@@ -8,6 +8,8 @@ import "./Checkout.css";
 import { Link as RouterLink, LinkProps as RouterLinkProps, NavLink } from "react-router-dom";
 import "./Confirmation.css";
 import { LinkProps } from "@mui/material/Link";
+import ProductNotFound from "../components/ProductNotFound";
+import { ErrorMessage } from "formik";
 
 export function Checkout() {
     const { cart, removeOneFromCart, removeAllCart, addToCart } = useCart();
@@ -25,18 +27,7 @@ export function Checkout() {
     });
 
     if (totalProducts <= 0 && !customer) {
-        return (
-            <div className="products-main center-non-flex text-align-center">
-                <h1 className="text-align-center">No products where found</h1>
-                <NavLink to={"/products"}>
-                    {""}
-                    <Button variant="contained" href="#contained-buttons">
-                        Back to products
-                    </Button>
-                </NavLink>
-                <img className="center max-width" src="https://i.imgur.com/95yjYOs.gif"></img>
-            </div>
-        );
+        return <ProductNotFound errorMessage={"No products where found"} />;
     } else if (!customer) {
         return (
             <div className="products-main center-non-flex">
@@ -55,26 +46,26 @@ export function Checkout() {
                                     ></img>
                                 </div>
                                 <div className="add-remove-buttons">
-                                <Button
-                                    size="small"
-                                    variant="contained"
-                                    color="primary"
-                                    onClick={() => {
-                                        addToCart(cartItem.product);
-                                    }}
-                                >
-                                    +
-                                </Button>
-                                <Button
-                                    size="small"
-                                    variant="contained"
-                                    color="primary"
-                                    onClick={() => {
-                                        removeOneFromCart(cartItem.product);
-                                    }}
-                                >
-                                    -
-                                </Button>
+                                    <Button
+                                        size="small"
+                                        variant="contained"
+                                        color="primary"
+                                        onClick={() => {
+                                            addToCart(cartItem.product);
+                                        }}
+                                    >
+                                        +
+                                    </Button>
+                                    <Button
+                                        size="small"
+                                        variant="contained"
+                                        color="primary"
+                                        onClick={() => {
+                                            removeOneFromCart(cartItem.product);
+                                        }}
+                                    >
+                                        -
+                                    </Button>
                                 </div>
                                 <p>
                                     Product total:{" "}

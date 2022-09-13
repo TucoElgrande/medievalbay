@@ -7,6 +7,7 @@ import { useProduct } from "../context/ProductContext";
 import { Button } from "@mui/material";
 import { useCart } from "../context/CartContext";
 import { currencyFormat } from "../utilities/currencyFormat";
+import ProductNotFound from "../components/ProductNotFound";
 
 function SpecificProducts() {
     const relatedProducts = getAmountOfProducts(4);
@@ -15,8 +16,7 @@ function SpecificProducts() {
     const product = getProduct(Number(params.productId));
 
     if (!product) {
-        return <p>product does not exist</p>;
-        //TODO ^ + go home button, possible be made into component?
+        return <ProductNotFound errorMessage={"Merlin could not find this product"} />;
     } else {
         return (
             <div className="specific-products-main center-non-flex">
@@ -30,7 +30,7 @@ function SpecificProducts() {
                     </div>
 
                     <div className="flex-container flex-wrap products-main center-items center-non-flex">
-                        <p> {product.description} </p>
+                        <p className="products-main"> {product.description} </p>
                     </div>
 
                     <div className="flex-container flex-wrap products-main center-items center-non-flex">
