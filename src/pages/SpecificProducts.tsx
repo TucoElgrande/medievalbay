@@ -38,7 +38,11 @@ function SpecificProducts() {
                     </div>
 
                     <div className="flex-container flex-wrap products-main center-items center-non-flex">
-                        <Button size="large" onClick={() => addToCart(product)}>
+                        <Button
+                            variant="contained"
+                            size="medium"
+                            onClick={() => addToCart(product)}
+                        >
                             Add to cart
                         </Button>
                     </div>

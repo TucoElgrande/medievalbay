@@ -56,12 +56,14 @@ const ProductCardBrowse: React.FC<Props> = ({
             </CardContent>
             {!isAdmin && buttons && (
                 <CardActions>
-                    <Button size="large" onClick={() => addToCart(product)}>
+                    <Button variant="contained" size="medium" onClick={() => addToCart(product)}>
                         Add to cart
                     </Button>
                     {inspect && (
                         <NavLink style={linkStyle} to={"/products/" + product.id.toString()}>
-                            <Button size="small">Inspect item</Button>
+                            <Button variant="contained" size="medium">
+                                Inspect item
+                            </Button>
                         </NavLink>
                     )}
                 </CardActions>
