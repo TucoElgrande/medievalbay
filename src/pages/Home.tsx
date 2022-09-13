@@ -40,7 +40,13 @@ function Home() {
 
             <div className="flex-container flex-wrap products-main center-items center-non-flex">
                 {products.map((product) => (
-                    <ProductCardBrowse key={product.id} product={product} cardClickable={true} />
+                    <div className="product-margin">
+                        <ProductCardBrowse
+                            key={product.id}
+                            product={product}
+                            cardClickable={true}
+                        />
+                    </div>
                 ))}
             </div>
         </div>
