@@ -30,7 +30,7 @@ function SpecificProducts() {
                     </div>
 
                     <div className="flex-container flex-wrap products-main center-items center-non-flex">
-                        <p> {product.description} </p>
+                        <p className="products-main"> {product.description} </p>
                     </div>
 
                     <div className="flex-container flex-wrap products-main center-items center-non-flex">
