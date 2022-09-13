@@ -1,11 +1,14 @@
 import { Button, Card, CardActions, CardContent, Switch, Typography } from "@mui/material";
 import React, { useState } from "react";
+import ProductCardBrowse from "../components/ProductCardBrowse";
 import ProductCardHomepage from "../components/ProductCardHomepage";
-import { useProduct } from "../context/ProductContext";
+import { Product, useProduct } from "../context/ProductContext";
 import "./Home.css";
+import { getAmountOfProducts } from "../data/data";
 
 function Home() {
-    const { products, isAdmin, toggleAdmin } = useProduct();
+    const { isAdmin, toggleAdmin } = useProduct();
+    const products = getAmountOfProducts(2);
 
     return (
         <div className="main-content center-non-flex flex-container center-items flex-direction-column">
@@ -56,14 +59,22 @@ function Home() {
             </Card>
 
             <div className="text-align-center">
-                <h2>Featured Items</h2>
+                <h2 className="">Merlins featured item</h2>
             </div>
 
-            <div className="flex-container flex-wrap center-items center-non-flex">
+            <div className="flex-container flex-wrap products-main center-items center-non-flex">
+
                 {products.map((product) => (
-                    <ProductCardHomepage {...product} />
+                    <div className="product-margin">
+                        <ProductCardBrowse
+                            key={product.id}
+                            product={product}
+                            cardClickable={true}
+                        />
+                    </div>
                 ))}
             </div>
+            <img className="center max-width" src="https://i.imgur.com/M8wqbsv.gif"></img>
         </div>
     );
 }

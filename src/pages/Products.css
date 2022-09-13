@@ -22,3 +22,10 @@
         width: 100%;
     }
 }
+
+.order-confirmation-sucess {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
