@@ -4,6 +4,10 @@
     height: 15rem;
 }
 
+.specific-product-browse-img {
+    width: 50%;
+}
+
 .products-main {
     width: 70%;
 }
