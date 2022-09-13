@@ -27,6 +27,7 @@ function Products() {
                             inspect={true}
                             cardClickable={true}
                             buttons={true}
+                            isEditable={true}
                         />
                     </div>
                 ))}

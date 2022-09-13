@@ -71,7 +71,6 @@ function CartProvider({ children }: Props) {
         setCart([]);
     };
 
-    console.log(cart);
     // const displayCart = () => {
     //     return (
     //         </div>
