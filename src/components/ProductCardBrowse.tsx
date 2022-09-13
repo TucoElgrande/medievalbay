@@ -17,9 +17,16 @@ type Props = {
     cardClickable?: boolean;
     buttons?: boolean;
     inspect?: boolean;
+    isEditable?: boolean;
 };
 
-const ProductCardBrowse: React.FC<Props> = ({ product, inspect, cardClickable, buttons }) => {
+const ProductCardBrowse: React.FC<Props> = ({
+    product,
+    inspect,
+    cardClickable,
+    buttons,
+    isEditable,
+}) => {
     const { addToCart, removeOneFromCart } = useCart();
     const { isAdmin, removeProduct } = useProduct();
 
@@ -59,7 +66,7 @@ const ProductCardBrowse: React.FC<Props> = ({ product, inspect, cardClickable, b
                     )}
                 </CardActions>
             )}
-            {isAdmin && (
+            {isAdmin && isEditable && (
                 <div>
                     <ProductForm product={{ ...product }} buttonName="Edit" />
                     <Button

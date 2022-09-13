@@ -97,13 +97,16 @@ export function getAmountOfProducts(amount: number) {
     if (amount > products.length) {
         amount = products.length;
     }
-
     let returnProducts: Product[] = [];
-    console.log("REUTRN");
-    console.log(returnProducts);
+
+    // DEEP copy xd
+    let productsCopy: Product[] = JSON.parse(JSON.stringify(products));
 
     for (let index = 0; index < amount; index++) {
-        returnProducts.push(products[index]);
+        const randomIndex = Math.floor(Math.random() * productsCopy.length);
+
+        returnProducts.push(productsCopy[randomIndex]);
+        productsCopy.splice(randomIndex, 1);
     }
 
     return returnProducts;

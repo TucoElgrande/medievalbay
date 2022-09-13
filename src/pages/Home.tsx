@@ -63,7 +63,6 @@ function Home() {
             </div>
 
             <div className="flex-container flex-wrap products-main center-items center-non-flex">
-
                 {products.map((product) => (
                     <div className="product-margin">
                         <ProductCardBrowse
