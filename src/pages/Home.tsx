@@ -42,7 +42,13 @@ function Home() {
 
 
                 {products.map((product) => (
-                    <ProductCardBrowse key={product.id} product={product} cardClickable={true} />
+                    <div className="product-margin">
+                        <ProductCardBrowse
+                            key={product.id}
+                            product={product}
+                            cardClickable={true}
+                        />
+                    </div>
                 ))}
             </div>
             <img className="center max-width" src="https://i.imgur.com/M8wqbsv.gif"></img>

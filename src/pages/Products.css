@@ -4,6 +4,10 @@
     height: 15rem;
 }
 
+.specific-product-browse-img {
+    width: 50%;
+}
+
 .products-main {
     width: 70%;
 }
@@ -14,4 +18,10 @@
 
 .center-non-flex {
     margin: auto;
+}
+.order-confirmation-sucess {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
 }
