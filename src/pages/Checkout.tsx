@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import { currencyFormat } from "../utilities/currencyFormat";
 import CustomerForm, { Customer, CustomerCreate } from "../components/CustomerForm";
 import { string } from "yup";
-import "./Products.css";
+import "./Checkout.css";
 
 export function Checkout() {
     const { cart, removeOneFromCart, removeAllCart, addToCart } = useCart();
@@ -33,7 +33,7 @@ export function Checkout() {
                 <div className="flex-container flex-wrap center-items">
                     {cart.map((cartItem) => (
                         <div>
-                            <div>
+                            <div className="checkout-cart-item">
                                 <div>
                                     <p>
                                         {cartItem.product.title} x {cartItem.quantity}
@@ -41,13 +41,14 @@ export function Checkout() {
                                     <p>{currencyFormat(cartItem.product.price)}</p>
                                     <img
                                         src={cartItem.product.imageUrl}
-                                        className="product-browse-img"
+                                        className="checkout-browse-img"
                                     ></img>
                                 </div>
+                                <div className="add-remove-buttons">
                                 <Button
                                     size="small"
                                     variant="contained"
-                                    color="success"
+                                    color="primary"
                                     onClick={() => {
                                         addToCart(cartItem.product);
                                     }}
@@ -57,13 +58,14 @@ export function Checkout() {
                                 <Button
                                     size="small"
                                     variant="contained"
-                                    color="error"
+                                    color="primary"
                                     onClick={() => {
                                         removeOneFromCart(cartItem.product);
                                     }}
                                 >
                                     -
                                 </Button>
+                                </div>
                                 <p>
                                     Product total:{" "}
                                     {currencyFormat(cartItem.product.price * cartItem.quantity)}
@@ -73,19 +75,23 @@ export function Checkout() {
                     ))}
                 </div>
                 <div className="flex-container flex-wrap center-items">
-                    <div>
-                    {totalPrice != 0}
-                    {totalPrice != 0 && <p><strong> Total: {currencyFormat(totalPrice)}</strong></p>}
-                    </div>
-                    <div>
                     <Button variant="outlined" color="error" onClick={() => removeAllCart()}>
                         Clear cart
                     </Button>
+                </div>
+                <div className="flex-container flex-wrap center-items">
+                    <div>
+                        {totalPrice != 0}
+                        {totalPrice != 0 && (
+                            <h3>
+                                <strong> Total: {currencyFormat(totalPrice)}</strong>
+                            </h3>
+                        )}
                     </div>
                 </div>
                 <div className="flex-container flex-wrap center-items">
                     <CustomerForm callBack={handleCallback} />
-                    </div>
+                </div>
             </div>
         );
     } else
