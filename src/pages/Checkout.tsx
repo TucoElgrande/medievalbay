@@ -5,6 +5,9 @@ import { currencyFormat } from "../utilities/currencyFormat";
 import CustomerForm, { Customer, CustomerCreate } from "../components/CustomerForm";
 import { string } from "yup";
 import "./Checkout.css";
+import { Link as RouterLink, LinkProps as RouterLinkProps, NavLink } from "react-router-dom";
+import "./Confirmation.css";
+import { LinkProps } from "@mui/material/Link";
 
 export function Checkout() {
     const { cart, removeOneFromCart, removeAllCart, addToCart } = useCart();
@@ -23,8 +26,15 @@ export function Checkout() {
 
     if (totalProducts <= 0 && !customer) {
         return (
-            <div className="products-main center-non-flex">
-                <h2>INGA PRODUKTER HITTADES</h2>
+            <div className="products-main center-non-flex text-align-center">
+                <h1 className="text-align-center">No products where found</h1>
+                <NavLink to={"/products"}>
+                    {""}
+                    <Button variant="contained" href="#contained-buttons">
+                        Back to products
+                    </Button>
+                </NavLink>
+                <img className="center max-width" src="https://i.imgur.com/95yjYOs.gif"></img>
             </div>
         );
     } else if (!customer) {
@@ -96,9 +106,29 @@ export function Checkout() {
         );
     } else
         return (
-            <div className="order-confirmation-sucess products-main center-non-flex">
-                <h2>Tack för ditt köp {customer.fname} </h2>
-                <p> en bekräftelse har skickats till {customer.email} </p>
+            <div className=" center">
+                <span>
+                    <div className="center text-align-center">
+                        <h2>
+                            Thank you for your purchase esteemed customer <h1>{customer.fname}</h1>{" "}
+                        </h2>
+                        <h3 className="text-align-center">
+                            {" "}
+                            A confirmation of your purchase is sent to {customer.email}{" "}
+                        </h3>
+                    </div>
+
+                    <img className="center max-width" src="https://i.imgur.com/JQgYENA.gif"></img>
+
+                    <p className="text-align-center">
+                        <NavLink to={"/products"}>
+                            {""}
+                            <Button variant="contained" href="#contained-buttons">
+                                Back to products
+                            </Button>
+                        </NavLink>
+                    </p>
+                </span>
             </div>
         );
 }

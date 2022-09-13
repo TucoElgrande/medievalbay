@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import ProductCardBrowse from "../components/ProductCardBrowse";
 import ProductCardHomepage from "../components/ProductCardHomepage";
-import { useProduct } from "../context/ProductContext";
+import { Product, useProduct } from "../context/ProductContext";
 import "./Home.css";
+import { getAmountOfProducts } from "../data/data";
 
 function Home() {
-    const { products } = useProduct();
+    const products = getAmountOfProducts(2);
 
     return (
         <div>
@@ -33,14 +35,17 @@ function Home() {
             </div>
 
             <div className="text-align-center">
-                <h2 className="">Featured Items</h2>
+                <h2 className="">Merlins featured item</h2>
             </div>
 
             <div className="flex-container flex-wrap products-main center-items center-non-flex">
+
+
                 {products.map((product) => (
-                    <ProductCardHomepage {...product} />
+                    <ProductCardBrowse key={product.id} product={product} cardClickable={true} />
                 ))}
             </div>
+            <img className="center max-width" src="https://i.imgur.com/M8wqbsv.gif"></img>
         </div>
     );
 }
