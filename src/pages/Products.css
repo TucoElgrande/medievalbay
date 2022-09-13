@@ -1,14 +1,15 @@
 .product-browse-img {
     margin: 0.5rem;
-    width: 15rem;
-    height: 15rem;
+    max-width: 15rem;
+    min-height: 5rem;
+    max-height: 40rem;
 }
 
 .specific-product-browse-img {
     width: 50%;
 }
 
-.products-main {
+.main-content {
     width: 70%;
 }
 
@@ -19,6 +20,13 @@
 .center-non-flex {
     margin: auto;
 }
+
+@media (max-width: 360px) {
+    .main-content {
+        width: 100%;
+    }
+}
+
 .order-confirmation-sucess {
     margin: auto;
     width: 50%;

@@ -19,7 +19,6 @@ body {
 }
 
 .page-content-bg {
-    background-color: white;
     bottom: 0;
     margin: auto;
     height: 100%;
@@ -57,5 +56,11 @@ body {
 
     .bg-image2 {
         right: -2rem;
+    }
+}
+
+@media (min-width: 360px) {
+    .page-content-bg {
+        background-color: white;
     }
 }

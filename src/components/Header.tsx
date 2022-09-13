@@ -8,7 +8,6 @@ import { useProduct } from "../context/ProductContext";
 
 function Header() {
     const { cart } = useCart();
-    const { isAdmin, toggleAdmin } = useProduct();
 
     let cartItems: number = 0;
     cart.forEach((e) => {
@@ -18,7 +17,7 @@ function Header() {
     return (
         <div>
             <header style={rootStyle}>
-                <div>
+                <div className="center-non-flex main-content">
                     <NavLink style={linkStyle} to="">
                         🤦‍♀️
                     </NavLink>
@@ -32,7 +31,6 @@ function Header() {
                         </Badge>
                     </NavLink>
                 </div>
-                <Switch checked={isAdmin} onChange={toggleAdmin} />
             </header>
             <Outlet />
         </div>
@@ -43,7 +41,7 @@ const rootStyle: CSSProperties = {
     display: "flex",
     justifyContent: "space-between",
     background: "hotpink",
-    padding: "0.4rem 1rem",
+    padding: "0.4rem 0",
 };
 
 interface LinkProps {
