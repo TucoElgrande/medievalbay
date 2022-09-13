@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import ProductCardBrowse from "../components/ProductCardBrowse";
 import ProductCardHomepage from "../components/ProductCardHomepage";
 import { Product, useProduct } from "../context/ProductContext";
 import "./Home.css";
+import { getAmountOfProducts } from "../data/data";
 
 function Home() {
-    const { products } = useProduct();
-    const randProduct = products[Math.floor(Math.random() * products.length)];
+    const products = getAmountOfProducts(2);
 
     return (
         <div>
@@ -38,7 +39,11 @@ function Home() {
             </div>
 
             <div className="flex-container flex-wrap products-main center-items center-non-flex">
-                <ProductCardHomepage {...randProduct} />
+
+
+                {products.map((product) => (
+                    <ProductCardBrowse key={product.id} product={product} cardClickable={true} />
+                ))}
             </div>
             <img className="center max-width" src="https://i.imgur.com/M8wqbsv.gif"></img>
         </div>
