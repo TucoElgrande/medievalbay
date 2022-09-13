@@ -70,7 +70,8 @@ const CustomerForm: React.FC<Props> = ({ callBack }) => {
     });
 
     return (
-        <Box component="form" onSubmit={formik.handleSubmit} sx={{ margin: "1rem" }}>
+        <Box component="form" onSubmit={formik.handleSubmit} sx={{ margin: "1rem"}}>
+            <Stack>
             <TextField
                 id="fname"
                 label="First Name"
@@ -123,13 +124,14 @@ const CustomerForm: React.FC<Props> = ({ callBack }) => {
                 value={formik.values.phone}
                 onChange={formik.handleChange}
             />
+            </Stack>
             <div>
                 <Stack sx={{ width: "100%" }} spacing={2}>
                     <div>{formik.touched.fname && formik.errors.fname}</div>
                     <div>{formik.touched.lname && formik.errors.lname}</div>
-                    <div> {formik.touched.email && formik.errors.email}</div>
-                    <div> {formik.touched.address && formik.errors.address}</div>
-                    <div> {formik.touched.phone && formik.errors.phone}</div>
+                    <div>{formik.touched.email && formik.errors.email}</div>
+                    <div>{formik.touched.address && formik.errors.address}</div>
+                    <div>{formik.touched.phone && formik.errors.phone}</div>
                 </Stack>
                 {/* <button type="submit">Validation button</button> */}
                 <Button variant="contained" color="success" type="submit">

@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import { currencyFormat } from "../utilities/currencyFormat";
 import CustomerForm, { Customer, CustomerCreate } from "../components/CustomerForm";
 import { string } from "yup";
+import "./Checkout.css";
 import { Link as RouterLink, LinkProps as RouterLinkProps, NavLink } from "react-router-dom";
 import "./Confirmation.css";
 import { LinkProps } from "@mui/material/Link";
@@ -39,65 +40,68 @@ export function Checkout() {
     } else if (!customer) {
         return (
             <div className="products-main center-non-flex">
-                <h2>Checkout</h2>
-                <div>
+                <div className="flex-container flex-wrap center-items">
                     {cart.map((cartItem) => (
                         <div>
-                            <div>
+                            <div className="checkout-cart-item">
                                 <div>
                                     <p>
                                         {cartItem.product.title} x {cartItem.quantity}
                                     </p>
-                                    <p>
-                                        Product total:{" "}
-                                        {currencyFormat(cartItem.product.price * cartItem.quantity)}
-                                    </p>
                                     <p>{currencyFormat(cartItem.product.price)}</p>
                                     <img
                                         src={cartItem.product.imageUrl}
-                                        className="product-browse-img"
+                                        className="checkout-browse-img"
                                     ></img>
                                 </div>
+                                <div className="add-remove-buttons">
                                 <Button
                                     size="small"
                                     variant="contained"
-                                    color="error"
-                                    onClick={() => {
-                                        removeOneFromCart(cartItem.product);
-                                    }}
-                                >
-                                    -
-                                </Button>
-                                <Button
-                                    size="small"
-                                    variant="contained"
-                                    color="success"
+                                    color="primary"
                                     onClick={() => {
                                         addToCart(cartItem.product);
                                     }}
                                 >
                                     +
                                 </Button>
+                                <Button
+                                    size="small"
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={() => {
+                                        removeOneFromCart(cartItem.product);
+                                    }}
+                                >
+                                    -
+                                </Button>
+                                </div>
+                                <p>
+                                    Product total:{" "}
+                                    {currencyFormat(cartItem.product.price * cartItem.quantity)}
+                                </p>
                             </div>
-                            <Button
-                                size="small"
-                                variant="outlined"
-                                onClick={() => {
-                                    removeOneFromCart(cartItem.product);
-                                }}
-                            >
-                                Remove
-                            </Button>
                         </div>
                     ))}
-                    {totalPrice != 0}
-                    {totalPrice != 0 && <p> Total: {currencyFormat(totalPrice)}</p>}
                 </div>
-
-                <Button variant="outlined" color="error" onClick={() => removeAllCart()}>
-                    Clear cart
-                </Button>
-                <CustomerForm callBack={handleCallback} />
+                <div className="flex-container flex-wrap center-items">
+                    <Button variant="outlined" color="error" onClick={() => removeAllCart()}>
+                        Clear cart
+                    </Button>
+                </div>
+                <div className="flex-container flex-wrap center-items">
+                    <div>
+                        {totalPrice != 0}
+                        {totalPrice != 0 && (
+                            <h3>
+                                <strong> Total: {currencyFormat(totalPrice)}</strong>
+                            </h3>
+                        )}
+                    </div>
+                </div>
+                <div className="flex-container flex-wrap center-items">
+                    <CustomerForm callBack={handleCallback} />
+                </div>
             </div>
         );
     } else
