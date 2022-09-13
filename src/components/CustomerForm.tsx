@@ -71,71 +71,80 @@ const CustomerForm: React.FC<Props> = ({ callBack }) => {
 
     return (
         <Box component="form" onSubmit={formik.handleSubmit} sx={{ margin: "1rem" }}>
-            <TextField
-                id="fname"
-                label="First Name"
-                variant="outlined"
-                placeholder="First Name"
-                type="text"
-                name="fname"
-                value={formik.values.fname.trim()}
-                onChange={formik.handleChange}
-            />
+            <Stack>
+                <TextField
+                    id="fname"
+                    label="First Name"
+                    variant="outlined"
+                    placeholder="First Name"
+                    type="text"
+                    name="fname"
+                    value={formik.values.fname.trim()}
+                    onChange={formik.handleChange}
+                    error={Boolean(formik.errors.fname)}
+                    helperText={formik.touched.fname && formik.errors.fname}
+                    sx={{ marginBottom: "1rem" }}
+                />
 
-            <TextField
-                id="lname"
-                label="Last Name"
-                variant="outlined"
-                placeholder="Last Name"
-                type="text"
-                name="lname"
-                value={formik.values.lname.trim()}
-                onChange={formik.handleChange}
-            />
+                <TextField
+                    id="lname"
+                    label="Last Name"
+                    variant="outlined"
+                    placeholder="Last Name"
+                    type="text"
+                    name="lname"
+                    value={formik.values.lname.trim()}
+                    onChange={formik.handleChange}
+                    error={Boolean(formik.errors.lname)}
+                    helperText={formik.touched.lname && formik.errors.lname}
+                    sx={{ marginBottom: "1rem" }}
+                />
 
-            <TextField
-                id="email"
-                label="Email"
-                variant="outlined"
-                placeholder="Email"
-                type="text"
-                name="email"
-                value={formik.values.email.trim()}
-                onChange={formik.handleChange}
-            />
-            <TextField
-                id="street-address"
-                label="Address"
-                variant="outlined"
-                placeholder="Address"
-                type="text"
-                name="address"
-                value={formik.values.address}
-                onChange={formik.handleChange}
-            />
-            <TextField
-                id="tel"
-                label="Phone number"
-                variant="outlined"
-                placeholder="Phone number"
-                type="text"
-                name="phone"
-                value={formik.values.phone}
-                onChange={formik.handleChange}
-            />
-            <div>
-                <Stack sx={{ width: "100%" }} spacing={2}>
-                    <div>{formik.touched.fname && formik.errors.fname}</div>
-                    <div>{formik.touched.lname && formik.errors.lname}</div>
-                    <div> {formik.touched.email && formik.errors.email}</div>
-                    <div> {formik.touched.address && formik.errors.address}</div>
-                    <div> {formik.touched.phone && formik.errors.phone}</div>
-                </Stack>
-                {/* <button type="submit">Validation button</button> */}
-                <Button variant="contained" color="success" type="submit">
-                    Confirm purchase
-                </Button>
-            </div>
+                <TextField
+                    id="email"
+                    label="Email"
+                    variant="outlined"
+                    placeholder="Email"
+                    type="text"
+                    name="email"
+                    value={formik.values.email.trim()}
+                    onChange={formik.handleChange}
+                    error={Boolean(formik.errors.email)}
+                    helperText={formik.touched.email && formik.errors.email}
+                    sx={{ marginBottom: "1rem" }}
+                />
+                <TextField
+                    id="street-address"
+                    label="Address"
+                    variant="outlined"
+                    placeholder="Address"
+                    type="text"
+                    name="address"
+                    value={formik.values.address}
+                    onChange={formik.handleChange}
+                    error={Boolean(formik.errors.address)}
+                    helperText={formik.touched.address && formik.errors.address}
+                    sx={{ marginBottom: "1rem" }}
+                />
+                <TextField
+                    id="tel"
+                    label="Phone number"
+                    variant="outlined"
+                    placeholder="Phone number"
+                    type="text"
+                    name="phone"
+                    value={formik.values.phone}
+                    onChange={formik.handleChange}
+                    error={Boolean(formik.errors.phone)}
+                    helperText={formik.touched.phone && formik.errors.phone}
+                    sx={{ marginBottom: "1rem" }}
+                />
+                <div>
+                    <Button variant="contained" color="success" type="submit">
+                        Confirm purchase
+                    </Button>
+                </div>
+            </Stack>
         </Box>
     );
 };
