@@ -59,19 +59,26 @@ function Home() {
             </Card>
 
             <div className="text-align-center">
-                <h2 className="">Merlins featured item</h2>
-            </div>
+                <h2 className=""></h2>
+                <Card>
+                    <CardContent>
+                        <Typography variant="h4" component="div">
+                            Merlins featured items
+                        </Typography>
 
-            <div className="flex-container flex-wrap products-main center-items center-non-flex">
-                {products.map((product) => (
-                    <div className="product-margin">
-                        <ProductCardBrowse
-                            key={product.id}
-                            product={product}
-                            cardClickable={true}
-                        />
-                    </div>
-                ))}
+                        <div className="flex-container flex-wrap products-main center-items center-non-flex">
+                            {products.map((product) => (
+                                <div className="product-margin">
+                                    <ProductCardBrowse
+                                        key={product.id}
+                                        product={product}
+                                        cardClickable={true}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </CardContent>
+                </Card>
             </div>
             <img className="center max-width" src="https://i.imgur.com/M8wqbsv.gif"></img>
         </div>
