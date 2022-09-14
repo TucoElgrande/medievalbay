@@ -118,7 +118,7 @@ function ProductForm(props: Props) {
                     helperText={formik.touched.description && formik.errors.description}
                     sx={{ marginBottom: "1rem" }}
                 />
-                <div>
+                <div className="flex-container flex-wrap center-items">
                     <Button
                         variant="contained"
                         type="submit"

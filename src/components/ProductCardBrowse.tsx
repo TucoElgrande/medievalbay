@@ -71,7 +71,7 @@ const ProductCardBrowse: React.FC<Props> = ({
                 </CardActions>
             )}
             {isAdmin && isEditable && (
-                <div>
+                <div className="flex-container flex-wrap center-items">
                     <ProductForm product={{ ...product }} buttonName="Edit" />
                     <Button
                         onClick={() => {
@@ -79,7 +79,7 @@ const ProductCardBrowse: React.FC<Props> = ({
                         }}
                         variant="outlined"
                         startIcon={<DeleteIcon />}
-                        sx={{ textAlign: "center" }}
+                        sx={{ textAlign: "center", marginBottom: "0.5rem" }}
                     >
                         Delete
                     </Button>
