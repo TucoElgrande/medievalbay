@@ -15,6 +15,8 @@ function SpecificProducts() {
     const params = useParams<{ productId: string }>();
     const product = getProduct(Number(params.productId));
 
+    window.scrollTo(0, 0);
+
     if (!product) {
         return <ProductNotFound errorMessage={"Merlin could not find this product"} />;
     } else {
