@@ -61,7 +61,10 @@ function ProductForm(props: Props) {
     });
 
     return (
-        <Card className="white-bg flex-container center-items flex-direction-column">
+        <Card
+            className="white-bg flex-container center-items flex-direction-column"
+            sx={{ boxShadow: 0 }}
+        >
             <Box component="form" onSubmit={formik.handleSubmit} sx={{ margin: "1rem" }}>
                 {" "}
                 <Stack>
