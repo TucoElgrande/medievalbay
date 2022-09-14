@@ -46,26 +46,26 @@ export function Checkout() {
                                     ></img>
                                 </div>
                                 <div className="add-remove-buttons">
-                                    <Button
-                                        size="small"
-                                        variant="contained"
-                                        color="primary"
-                                        onClick={() => {
-                                            addToCart(cartItem.product);
-                                        }}
-                                    >
-                                        +
-                                    </Button>
-                                    <Button
-                                        size="small"
-                                        variant="contained"
-                                        color="primary"
-                                        onClick={() => {
-                                            removeOneFromCart(cartItem.product);
-                                        }}
-                                    >
-                                        -
-                                    </Button>
+                                <Button
+                                    size="small"
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={() => {
+                                        removeOneFromCart(cartItem.product);
+                                    }}
+                                >
+                                    -
+                                </Button>
+                                <Button
+                                    size="small"
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={() => {
+                                        addToCart(cartItem.product);
+                                    }}
+                                >
+                                    +
+                                </Button>
                                 </div>
                                 <p>
                                     Product total:{" "}
