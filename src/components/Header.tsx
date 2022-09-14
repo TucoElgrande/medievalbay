@@ -18,18 +18,20 @@ function Header() {
         <div>
             <header style={rootStyle}>
                 <div className="center-non-flex main-content">
-                    <NavLink style={linkStyle} to="">
-                        🤦‍♀️
-                    </NavLink>
-                    <NavLink style={linkStyle} to="products">
-                        Products
-                    </NavLink>
+                        <NavLink style={linkStyle} to="">
+                            🏰Home
+                        </NavLink>
+                        <NavLink style={linkStyle} to="products">
+                            🪓Products🛡️
+                        </NavLink>
 
-                    <NavLink style={linkStyle} to="checkout">
-                        <Badge color="secondary" badgeContent={cartItems}>
-                            <ShoppingCartIcon />
-                        </Badge>
-                    </NavLink>
+                        <NavLink style={linkStyle} to="checkout">
+                            Cart🐎
+                            <Badge color="secondary" badgeContent={cartItems}>
+                                {/* 🛒 */}
+                                <ShoppingCartIcon fontSize="large" />
+                            </Badge>
+                        </NavLink>
                 </div>
             </header>
             <Outlet />
@@ -44,10 +46,10 @@ const rootStyle: CSSProperties = {
     inset: "0",
     padding: "0.4rem 0",
     position: "fixed",
-    width:"100%",
-    height:"3rem",
-    zIndex:"1000",
-    borderBottom:"2px solid black"
+    width: "100%",
+    height: "3rem",
+    zIndex: "1000",
+    borderBottom: "2px solid black",
 };
 
 interface LinkProps {
@@ -58,7 +60,9 @@ const linkStyle = ({ isActive }: LinkProps): CSSProperties => ({
     padding: "0.4rem",
     textDecoration: "none",
     borderRadius: "1rem",
+    fontSize: "2rem",
     color: "black",
+    marginRight: "3rem",
     background: isActive ? "#CCCCFF" : undefined,
 });
 
