@@ -81,23 +81,25 @@ export function Checkout() {
                         Clear cart
                     </Button>
                 </div>
-                <Card sx={{ maxWidth: "20rem", margin: 2 }}>
-                    <CardContent className="flex-container center-items flex-direction-column">
-                        <div className="flex-container flex-wrap center-items">
-                            <div>
-                                {totalPrice != 0}
-                                {totalPrice != 0 && (
-                                    <h3>
-                                        <strong> Total: {currencyFormat(totalPrice)}</strong>
-                                    </h3>
-                                )}
+                <div className="flex-container center-items">
+                    <Card sx={{ margin: "2rem" }}>
+                        <CardContent className="flex-container center-items flex-direction-column">
+                            <div className="flex-container flex-wrap center-items">
+                                <div>
+                                    {totalPrice != 0}
+                                    {totalPrice != 0 && (
+                                        <h3>
+                                            <strong> Total: {currencyFormat(totalPrice)}</strong>
+                                        </h3>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex-container flex-wrap center-items">
-                            <CustomerForm callBack={handleCallback} />
-                        </div>
-                    </CardContent>
-                </Card>
+                            <div className="flex-container flex-wrap center-items">
+                                <CustomerForm callBack={handleCallback} />
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
         );
     } else

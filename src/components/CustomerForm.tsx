@@ -100,7 +100,6 @@ const CustomerForm: React.FC<Props> = ({ callBack }) => {
                     sx={{ marginBottom: "1rem" }}
                 />
 
-
                 <TextField
                     id="email"
                     label="Email"
@@ -114,6 +113,7 @@ const CustomerForm: React.FC<Props> = ({ callBack }) => {
                     helperText={formik.touched.email && formik.errors.email}
                     sx={{ marginBottom: "1rem" }}
                 />
+
                 <TextField
                     id="street-address"
                     label="Address"
@@ -127,6 +127,7 @@ const CustomerForm: React.FC<Props> = ({ callBack }) => {
                     helperText={formik.touched.address && formik.errors.address}
                     sx={{ marginBottom: "1rem" }}
                 />
+
                 <TextField
                     id="tel"
                     label="Phone number"
@@ -140,6 +141,7 @@ const CustomerForm: React.FC<Props> = ({ callBack }) => {
                     helperText={formik.touched.phone && formik.errors.phone}
                     sx={{ marginBottom: "1rem" }}
                 />
+
                 <div>
                     <Button variant="contained" color="success" type="submit">
                         Confirm purchase
