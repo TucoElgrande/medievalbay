@@ -7,7 +7,6 @@ import "./Home.css";
 import { getAmountOfProducts } from "../data/data";
 
 function Home() {
-    const { isAdmin, toggleAdmin } = useProduct();
     const products = getAmountOfProducts(2);
 
     return (
@@ -50,13 +49,6 @@ function Home() {
                     </Card>
                 </div>
             </div>
-
-            <Card className="white-bg flex-container center-items flex-direction-column">
-                <p>__________________________________</p>
-                <p>Admin mode</p>
-                <Switch checked={isAdmin} onChange={toggleAdmin} className="admin-switch" />
-                <p>__________________________________</p>
-            </Card>
 
             <div className="text-align-center">
                 <h2 className="">Merlins featured item</h2>
