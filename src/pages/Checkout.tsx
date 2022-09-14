@@ -104,9 +104,9 @@ export function Checkout() {
         );
     } else
         return (
-            <div className=" center">
+            <div className="center " style={{ marginTop: "5rem" }}>
                 <span>
-                    <div className="center text-align-center">
+                    <div className="center text-align-center ">
                         <h2>
                             Thank you for your purchase esteemed customer <h1>{customer.fname}</h1>{" "}
                         </h2>

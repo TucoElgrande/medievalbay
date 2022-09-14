@@ -1,6 +1,41 @@
 # Medievalbay
 
+## Project members
+
+Görgen Andersson
+
+Jimmie Kleman
+
+Erik Jakobsson
+
+Daniel Josefsson
+
+Yrkeshögskolan Borås klass Suvnet21
+
+---
+
 ## Project Description
+
+Link to github repository https://github.com/TucoElgrande/medievalbay
+
+Live page https://medievalbay.netlify.app/
+
+## This project was
+
+Created with Create-react-app, using React and Typescript
+
+Repository posted on Github.com
+
+Imported components from MUI.com
+
+Documentation:
+https://mui.com/material-ui/getting-started/overview/
+
+Hosted on Netlify.com
+
+Image hosting on Imgur.com
+
+---
 
 From Crossbows to Polearms and towering shields to Halberds, you can find all you could ever need **and** want in your next fight against the majestic dragon of the mountain! Finally you and your family can rest easy in the knowledge that your trusty weapon bought from our E-commerce will last more than a thousand battles!
 
@@ -8,11 +43,40 @@ From Crossbows to Polearms and towering shields to Halberds, you can find all yo
 
 ## How to build & run
 
-Recreational instructions in progress...
+cd medievalbay
 
-Link to documentation of component library(?) in progress
+npm i
 
-Stand "Medievalbay folder" to initialize the settings.json
+npm start
+
+---
+
+# Betygkrav
+
+**Krav för godkänt**
+
+-   [x] 1. Git & GitHub har använts
+-   [x] 2. Projektmappen innehåller en README.md fil - (läs ovan för mer info)
+-   [x] 3. Uppgiften lämnas in i tid!
+-   [x] 4. React, Typescript & ett komponentbibliotek ska används
+-   [x] 5. React Router används för navigering
+-   [x] 6. Formulären vid utcheckningen ska gå att automatiskt fyllas i
+-   [x] 7. Samtliga fält ska ha valideringsregler
+-   [x] 8. Hemsidan ska vara fullt responsiv (ner till 360px)
+-   [x] 9. Mockade produkter ska finnas i en egen fil och vara typade med ett TS interface
+-   [x] 10. Projektet skall läggas upp på Netlify eller liknande tjänst.
+
+**Krav för väl godkänt**
+
+-   [x] 11. Alla punkter för godkänt är uppfyllda
+-   [x] 12. Det finns en admin-sida där man kan ändra, lägga till eller ta bort produkter på sidan
+-   [x] 13. Samtliga produkter skall vara sparade i localstorage (om localstorage är tom då sidan
+        läses in behöver samtliga fördefinierade produkter sparas där)
+
+Do you have any questions or need something explained in English? - Please feel free to
+ask me during a lecture. Good luck!
+
+# Uppgiftens beskrivnings text
 
 ---
 
@@ -55,8 +119,6 @@ tydlig framgå för användaren när produkten läggs till i kundvagnen.
 Utcheckningsflödet skall ligga på en egen sida och innehålla delarna Kundvagn, Dina
 uppgifter.
 
-# 1
-
 ## Utcheckningsflödet
 
 ### Kundvagn
@@ -85,28 +147,3 @@ för ändring/tilläggning av en produkt är upp till er. Samtliga produkter ska
 sparade i localstorage, detta betyder att om localstorage är tomt vid inladdning av sidan
 behöver samtliga fördefinierade produkter sparas till localstorage. Använd en URL för
 bilder så det enkelt kan sparas i localstorage.
-
-# 2
-
-**Krav för godkänt**
-
--   [x] 1. Git & GitHub har använts
--   [x] 2. Projektmappen innehåller en README.md fil - (läs ovan för mer info)
--   [x] 3. Uppgiften lämnas in i tid!
--   [x] 4. React, Typescript & ett komponentbibliotek ska används
--   [x] 5. React Router används för navigering
--   [x] 6. Formulären vid utcheckningen ska gå att automatiskt fyllas i
--   [x] 7. Samtliga fält ska ha valideringsregler
--   [ ] 8. Hemsidan ska vara fullt responsiv (ner till 360px)
--   [x] 9. Mockade produkter ska finnas i en egen fil och vara typade med ett TS interface
--   [ ] 10. Projektet skall läggas upp på Netlify eller liknande tjänst.
-
-**Krav för väl godkänt**
-
--   [ ] 11. Alla punkter för godkänt är uppfyllda
--   [x] 12. Det finns en admin-sida där man kan ändra, lägga till eller ta bort produkter på sidan
--   [x] 13. Samtliga produkter skall vara sparade i localstorage (om localstorage är tom då sidan
-        läses in behöver samtliga fördefinierade produkter sparas där)
-
-Do you have any questions or need something explained in English? - Please feel free to
-ask me during a lecture. Good luck!
