@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Card } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Stack } from "@mui/system";
@@ -61,74 +61,76 @@ function ProductForm(props: Props) {
     });
 
     return (
-        <Box component="form" onSubmit={formik.handleSubmit} sx={{ margin: "1rem" }}>
-            {" "}
-            <Stack>
-                <TextField
-                    id="outlined-basic"
-                    label="Title"
-                    variant="outlined"
-                    placeholder="Title"
-                    type="text"
-                    name="title"
-                    value={formik.values.title}
-                    onChange={formik.handleChange}
-                    sx={{ marginBottom: "1rem" }}
-                    error={Boolean(formik.errors.title)}
-                    helperText={formik.touched.title && formik.errors.title}
-                />
+        <Card className="white-bg flex-container center-items flex-direction-column">
+            <Box component="form" onSubmit={formik.handleSubmit} sx={{ margin: "1rem" }}>
+                {" "}
+                <Stack>
+                    <TextField
+                        id="outlined-basic"
+                        label="Title"
+                        variant="outlined"
+                        placeholder="Title"
+                        type="text"
+                        name="title"
+                        value={formik.values.title}
+                        onChange={formik.handleChange}
+                        sx={{ marginBottom: "1rem" }}
+                        error={Boolean(formik.errors.title)}
+                        helperText={formik.touched.title && formik.errors.title}
+                    />
 
-                <TextField
-                    id="outlined-basic"
-                    label="Price"
-                    variant="outlined"
-                    placeholder="Price"
-                    type="number"
-                    name="price"
-                    value={formik.values.price}
-                    onChange={formik.handleChange}
-                    sx={{ marginBottom: "1rem" }}
-                    error={Boolean(formik.errors.price)}
-                    helperText={formik.touched.price && formik.errors.price}
-                />
+                    <TextField
+                        id="outlined-basic"
+                        label="Price"
+                        variant="outlined"
+                        placeholder="Price"
+                        type="number"
+                        name="price"
+                        value={formik.values.price}
+                        onChange={formik.handleChange}
+                        sx={{ marginBottom: "1rem" }}
+                        error={Boolean(formik.errors.price)}
+                        helperText={formik.touched.price && formik.errors.price}
+                    />
 
-                <TextField
-                    id="outlined-basic"
-                    label="ImageURL"
-                    variant="outlined"
-                    placeholder="ImageURL(Optional)"
-                    type="text"
-                    name="imageUrl"
-                    value={formik.values.imageUrl.trim()}
-                    onChange={formik.handleChange}
-                    sx={{ marginBottom: "1rem" }}
-                    error={Boolean(formik.errors.imageUrl)}
-                    helperText={formik.touched.imageUrl && formik.errors.imageUrl}
-                />
-                <TextField
-                    id="outlined-basic"
-                    label="Description"
-                    variant="outlined"
-                    placeholder="Description(Optional)"
-                    type="string"
-                    name="description"
-                    value={formik.values.description}
-                    onChange={formik.handleChange}
-                    error={Boolean(formik.errors.description)}
-                    helperText={formik.touched.description && formik.errors.description}
-                    sx={{ marginBottom: "1rem" }}
-                />
-                <div className="flex-container flex-wrap center-items">
-                    <Button
-                        variant="contained"
-                        type="submit"
-                        sx={{ width: "7.5rem", height: "2.5rem" }}
-                    >
-                        {props.buttonName}
-                    </Button>
-                </div>
-            </Stack>
-        </Box>
+                    <TextField
+                        id="outlined-basic"
+                        label="ImageURL"
+                        variant="outlined"
+                        placeholder="ImageURL(Optional)"
+                        type="text"
+                        name="imageUrl"
+                        value={formik.values.imageUrl.trim()}
+                        onChange={formik.handleChange}
+                        sx={{ marginBottom: "1rem" }}
+                        error={Boolean(formik.errors.imageUrl)}
+                        helperText={formik.touched.imageUrl && formik.errors.imageUrl}
+                    />
+                    <TextField
+                        id="outlined-basic"
+                        label="Description"
+                        variant="outlined"
+                        placeholder="Description(Optional)"
+                        type="string"
+                        name="description"
+                        value={formik.values.description}
+                        onChange={formik.handleChange}
+                        error={Boolean(formik.errors.description)}
+                        helperText={formik.touched.description && formik.errors.description}
+                        sx={{ marginBottom: "1rem" }}
+                    />
+                    <div className="flex-container flex-wrap center-items">
+                        <Button
+                            variant="contained"
+                            type="submit"
+                            sx={{ width: "7.5rem", height: "2.5rem" }}
+                        >
+                            {props.buttonName}
+                        </Button>
+                    </div>
+                </Stack>
+            </Box>
+        </Card>
     );
 }
 

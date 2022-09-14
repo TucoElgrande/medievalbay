@@ -20,7 +20,7 @@ function Products() {
                 <p>__________________________________</p>
             </Card>
             {isAdmin && (
-                <div className="add-product-form flex-container flex-wrap center-items">
+                <div className="add-product-form flex-container flex-wrap center-items product-margin">
                     <ProductForm buttonName="Add" product={noProduct} />
                 </div>
             )}
