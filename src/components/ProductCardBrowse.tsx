@@ -11,6 +11,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ProductForm from "./ProductForm";
 import { ProductionQuantityLimits } from "@mui/icons-material";
 import "../pages/Products.css";
+import { currencyFormat } from "../utilities/currencyFormat";
 
 type Props = {
     product: Product;
@@ -50,6 +51,7 @@ const ProductCardBrowse: React.FC<Props> = ({
                 >
                     {product.title}
                 </Typography>
+                <Typography variant="body1">{currencyFormat(product.price)}</Typography>
                 <Typography variant="body2" color="text.secondary">
                     {product.description}
                 </Typography>
