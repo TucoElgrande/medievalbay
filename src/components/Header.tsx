@@ -40,8 +40,14 @@ function Header() {
 const rootStyle: CSSProperties = {
     display: "flex",
     justifyContent: "space-between",
-    background: "hotpink",
+    background: "rgba(90,165,247,255)",
+    inset: "0",
     padding: "0.4rem 0",
+    position: "fixed",
+    width:"100%",
+    height:"3rem",
+    zIndex:"1000",
+    borderBottom:"2px solid black"
 };
 
 interface LinkProps {
