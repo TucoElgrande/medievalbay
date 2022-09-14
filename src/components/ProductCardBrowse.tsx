@@ -32,7 +32,7 @@ const ProductCardBrowse: React.FC<Props> = ({
     const { isAdmin, removeProduct } = useProduct();
 
     return (
-        <Card sx={{ maxWidth: 270 }}>
+        <Card sx={{ maxWidth: 270, boxShadow: 6 }}>
             {cardClickable && (
                 <NavLink to={"/products/" + product.id.toString()}>
                     <img src={product.imageUrl} className="product-browse-img" />

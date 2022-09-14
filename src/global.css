@@ -67,7 +67,7 @@ body {
     }
 }
 
-@media (min-width: 360px) {
+@media (min-width: 400px) {
     .page-content-bg {
         background-color: white;
     }

@@ -1,7 +1,7 @@
 .checkout-browse-img {
     display: block;
-    max-width:12rem;
-    max-height:8rem;
+    max-width: 12rem;
+    max-height: 8rem;
     margin-left: auto;
     margin-right: auto;
     width: auto;
@@ -14,13 +14,15 @@
     display: flex;
     justify-content: space-evenly;
 }
+
 .products-main {
     width: 70%;
 }
 
 .product-margin {
-    margin: 2rem;
+    margin: 1rem;
 }
+
 .checkout-cart-item {
     margin: 2rem;
     padding: 0.4rem;
@@ -29,10 +31,13 @@
     border: 2px groove black;
     border-radius: 1rem;
     align-items: center;
+    background-color: white;
 }
+
 .center-non-flex {
     margin: auto;
 }
+
 .order-confirmation-sucess {
     margin: auto;
     width: 50%;
