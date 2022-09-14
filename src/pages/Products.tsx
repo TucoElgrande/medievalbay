@@ -15,7 +15,7 @@ function Products() {
         <div className="products-main center-non-flex">
             <Card className="white-bg flex-container center-items flex-direction-column">
                 <p>__________________________________</p>
-                <p>Admin mode</p>
+                <h2>Admin mode</h2>
                 <Switch checked={isAdmin} onChange={toggleAdmin} className="admin-switch" />
                 <p>__________________________________</p>
             </Card>
