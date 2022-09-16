@@ -101,9 +101,9 @@ export function Checkout() {
         );
     } else
         return (
-            <div className="center " style={{ marginTop: "5rem" }}>
-                <span>
-                    <div className="center text-align-center ">
+            <Card>
+                <div className="center-non-flex" style={{ marginTop: "5rem" }}>
+                    <div className="center text-align-center">
                         <h2>Thank you for your purchase esteemed customer </h2>
                         <h1>{customer.fname}</h1>
                         <h3 className="text-align-center">
@@ -116,8 +116,8 @@ export function Checkout() {
                             <Button variant="contained">Back to products</Button>
                         </NavLink>
                     </p>
-                </span>
-            </div>
+                </div>
+            </Card>
         );
 }
 
