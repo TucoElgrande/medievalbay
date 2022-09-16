@@ -66,7 +66,6 @@ function ProductForm(props: Props) {
             sx={{ boxShadow: 0 }}
         >
             <Box component="form" onSubmit={formik.handleSubmit} sx={{ margin: "1rem" }}>
-                {" "}
                 <Stack>
                     <TextField
                         id="outlined-basic"

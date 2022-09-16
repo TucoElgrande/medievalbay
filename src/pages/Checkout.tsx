@@ -31,7 +31,7 @@ export function Checkout() {
             <div className="products-main center-non-flex">
                 <div className="flex-container flex-wrap center-items">
                     {cart.map((cartItem) => (
-                        <div>
+                        <div key={cartItem.product.id}>
                             <div className="checkout-cart-item">
                                 <div>
                                     <p>
@@ -66,7 +66,7 @@ export function Checkout() {
                                     </Button>
                                 </div>
                                 <p>
-                                    Product total:{" "}
+                                    Product total:
                                     {currencyFormat(cartItem.product.price * cartItem.quantity)}
                                 </p>
                             </div>
@@ -104,12 +104,10 @@ export function Checkout() {
             <div className="center " style={{ marginTop: "5rem" }}>
                 <span>
                     <div className="center text-align-center ">
-                        <h2>
-                            Thank you for your purchase esteemed customer <h1>{customer.fname}</h1>{" "}
-                        </h2>
+                        <h2>Thank you for your purchase esteemed customer </h2>
+                        <h1>{customer.fname}</h1>
                         <h3 className="text-align-center">
-                            {" "}
-                            A confirmation of your purchase is sent to {customer.email}{" "}
+                            A confirmation of your purchase is sent to {customer.email}
                         </h3>
                     </div>
                     <img className="center max-width" src="https://i.imgur.com/JQgYENA.gif"></img>
