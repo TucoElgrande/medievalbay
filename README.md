@@ -18,7 +18,7 @@ Yrkeshögskolan Borås klass Suvnet21
 
 I projektet har vi valt att lägga vår adminfunktionalitet i "Products" då det känns som en mer naturlig del då vi inte har någon admin funktionalitet i första sidan.
 
-Vi anser dessutom att förändringen i cart samt feedback på knapp är funktionalitet nog för att förstå att en produkt läggs i varukorg.
+Vi anser dessutom att förändringen i cart-badgen samt feedback på knapp är funktionalitet nog för att förstå att en produkt läggs i varukorg.
 
 404 i Netlify är fortfarande inte perfekt men fungerar bra när vi kör i localhost.
 
