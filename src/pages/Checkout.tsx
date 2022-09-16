@@ -10,6 +10,8 @@ import ProductNotFound from "../components/ProductNotFound";
 import { Card, CardContent } from "@mui/material";
 
 export function Checkout() {
+    window.scrollTo(0, 0);
+
     const { cart, removeOneFromCart, removeAllCart, addToCart } = useCart();
     const [customer, setCustomer] = useState<CustomerCreate>();
 

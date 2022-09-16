@@ -6,6 +6,8 @@ import "./Home.css";
 import { getAmountOfProducts } from "../data/data";
 
 function Home() {
+    window.scrollTo(0, 0);
+
     const products = getAmountOfProducts(2);
 
     return (
