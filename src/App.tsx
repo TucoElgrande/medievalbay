@@ -39,10 +39,7 @@ function App() {
                                         <h1>404</h1>
                                         <h1>Merlin could not find your page</h1>
                                         <NavLink to={"/"}>
-                                            {" "}
-                                            <Button variant="contained" href="#contained-buttons">
-                                                Back to home
-                                            </Button>
+                                            <Button variant="contained">Back to home</Button>
                                         </NavLink>
                                     </main>
                                 </CardContent>

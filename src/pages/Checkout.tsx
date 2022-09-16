@@ -115,10 +115,7 @@ export function Checkout() {
                     <img className="center max-width" src="https://i.imgur.com/JQgYENA.gif"></img>
                     <p className="text-align-center">
                         <NavLink to={"/products"}>
-                            {""}
-                            <Button variant="contained" href="#contained-buttons">
-                                Back to products
-                            </Button>
+                            <Button variant="contained">Back to products</Button>
                         </NavLink>
                     </p>
                 </span>

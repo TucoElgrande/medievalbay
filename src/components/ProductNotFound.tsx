@@ -13,10 +13,7 @@ function ProductNotFound(props: Props) {
                 <CardContent>
                     <h1 className="text-align-center">{props.errorMessage}</h1>
                     <NavLink to={"/products"}>
-                        {""}
-                        <Button variant="contained" href="#contained-buttons">
-                            Back to products
-                        </Button>
+                        <Button variant="contained">Back to products</Button>
                     </NavLink>
                 </CardContent>
             </Card>
