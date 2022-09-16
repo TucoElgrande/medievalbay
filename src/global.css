@@ -1,12 +1,42 @@
+/* FIXES */
+
 body::-webkit-scrollbar {
     display: none; /* Hide scrollbar for Chrome, Safari and Opera */
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
 
+/* HELPERS */
+
 .id {
     background-color: aqua;
 }
+
+.flex-container {
+    display: flex;
+}
+
+.fix-width {
+    width: 100%;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.main-content {
+    width: 70%;
+}
+
+.center-non-flex {
+    margin: auto;
+}
+
+/* GLOBAL STYLES */
 
 p {
     text-align: center;
@@ -15,6 +45,7 @@ p {
 body {
     margin: 0;
     margin-top: 4rem;
+    width: 100%;
 }
 
 .page-background {
@@ -55,6 +86,8 @@ body {
     right: -60rem;
     z-index: -2;
 }
+
+/* MEDIA QUERIES */
 
 @media (max-width: 1390px) {
     .bg-image1 {

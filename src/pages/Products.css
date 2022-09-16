@@ -9,22 +9,13 @@
     width: 50%;
 }
 
-.main-content {
-    width: 70%;
-}
-
 .product-margin {
     margin: 2rem;
 }
 
-.center-non-flex {
-    margin: auto;
-}
-
-@media (max-width: 400px) {
-    .main-content {
-        width: 100%;
-    }
+.admin-switch {
+    background-color: rgb(173, 173, 173);
+    border-radius: 100rem;
 }
 
 .order-confirmation-sucess {
@@ -32,4 +23,10 @@
     width: 50%;
     padding: 10px;
     text-align: center;
+}
+
+@media (max-width: 400px) {
+    .main-content {
+        width: 100%;
+    }
 }

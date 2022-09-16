@@ -1,15 +1,7 @@
-body {
-    width: 100%;
-}
-
 .text {
     max-width: 60%;
     margin: 1rem 6rem;
     background-color: white;
-}
-
-.flex-container {
-    display: flex;
 }
 
 .flex-wrap {
@@ -29,10 +21,6 @@ body {
     align-items: center;
 }
 
-.testt {
-    width: 100%;
-}
-
 .flex-item-four {
     flex-basis: 25%;
 }
@@ -43,19 +31,6 @@ body {
 
 .flex-item-one {
     flex-basis: 100%;
-}
-
-.text-align-center {
-    text-align: center;
-}
-
-.white-bg {
-    background-color: white;
-}
-
-.admin-switch {
-    background-color: rgb(173, 173, 173);
-    border-radius: 100rem;
 }
 
 @media (max-width: 1600px) {

@@ -8,7 +8,7 @@ type Props = {
 
 function ProductNotFound(props: Props) {
     return (
-        <div className="products-main center-non-flex text-align-center">
+        <div className="main-content center-non-flex text-align-center">
             <Card>
                 <CardContent>
                     <h1 className="text-align-center">{props.errorMessage}</h1>

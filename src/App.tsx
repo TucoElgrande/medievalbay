@@ -32,10 +32,10 @@ function App() {
                     <>
                         <Header />
                         <BackgroundStyle />
-                        <div className="products-main center-non-flex text-align-center">
+                        <div className="main-content center-non-flex text-align-center">
                             <Card>
                                 <CardContent>
-                                    <main className="products-main center-non-flex text-align-center">
+                                    <main className="main-content center-non-flex text-align-center">
                                         <h1>404</h1>
                                         <h1>Merlin could not find your page</h1>
                                         <NavLink to={"/"}>

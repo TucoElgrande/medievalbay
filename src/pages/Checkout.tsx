@@ -3,9 +3,7 @@ import { useCart } from "../context/CartContext";
 import Button from "@mui/material/Button";
 import { currencyFormat } from "../utilities/currencyFormat";
 import CustomerForm, { CustomerCreate } from "../components/CustomerForm";
-import "./Checkout.css";
 import { NavLink } from "react-router-dom";
-import "./Confirmation.css";
 import ProductNotFound from "../components/ProductNotFound";
 import { Card, CardContent } from "@mui/material";
 
@@ -30,7 +28,7 @@ export function Checkout() {
         return <ProductNotFound errorMessage={"No products where found"} />;
     } else if (!customer) {
         return (
-            <div className="products-main center-non-flex">
+            <div className="main-content center-non-flex">
                 <div className="flex-container flex-wrap center-items">
                     {cart.map((cartItem) => (
                         <div key={cartItem.product.id}>

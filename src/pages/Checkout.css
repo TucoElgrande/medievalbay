@@ -15,10 +15,6 @@
     justify-content: space-evenly;
 }
 
-.products-main {
-    width: 70%;
-}
-
 .product-margin {
     margin: 1rem;
 }
@@ -32,10 +28,6 @@
     border-radius: 1rem;
     align-items: center;
     background-color: white;
-}
-
-.center-non-flex {
-    margin: auto;
 }
 
 .order-confirmation-sucess {

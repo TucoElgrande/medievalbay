@@ -1,8 +1,6 @@
 import { Card, CardContent, Typography } from "@mui/material";
 import React from "react";
 import ProductCardBrowse from "../components/ProductCardBrowse";
-
-import "./Home.css";
 import { getAmountOfProducts } from "../data/data";
 
 function Home() {
@@ -51,13 +49,13 @@ function Home() {
                 </div>
             </div>
 
-            <div className="text-align-center testt">
+            <div className="text-align-center fix-width">
                 <Card>
                     <CardContent>
                         <Typography variant="h4" component="div">
                             Merlins featured items
                         </Typography>
-                        <div className="flex-container flex-wrap products-main center-items center-non-flex">
+                        <div className="flex-container flex-wrap main-content center-items center-non-flex">
                             {products.map((product) => (
                                 <div className="product-margin" key={product.id}>
                                     <ProductCardBrowse product={product} cardClickable={true} />

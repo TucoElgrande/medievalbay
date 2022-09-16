@@ -30,7 +30,10 @@ const ProductCardBrowse: React.FC<Props> = ({
     const { isAdmin, removeProduct } = useProduct();
 
     return (
-        <Card sx={{ maxWidth: 270, boxShadow: 6 }}>
+        <Card
+            sx={{ maxWidth: 270, boxShadow: 6 }}
+            className={"flex-container center-items flex-direction-column"}
+        >
             {cardClickable && (
                 <NavLink to={"/products/" + product.id.toString()}>
                     <img src={product.imageUrl} className="product-browse-img" />

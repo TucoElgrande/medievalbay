@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { getAmountOfProducts, getProduct } from "../data/data";
 import ProductCardBrowse from "../components/ProductCardBrowse";
-import "./Products.css";
 import { Button, Card, CardContent, Typography } from "@mui/material";
 import { useCart } from "../context/CartContext";
 import { currencyFormat } from "../utilities/currencyFormat";
@@ -49,7 +48,7 @@ function SpecificProducts() {
                     </Card>
                 </div>
 
-                <div className="flex-container flex-wrap center-items products-main center-non-flex">
+                <div className="flex-container flex-wrap center-items main-content center-non-flex">
                     {relatedProducts.map((product) => (
                         <div className="product-margin" key={product.id}>
                             <ProductCardBrowse product={product} cardClickable={true} />
