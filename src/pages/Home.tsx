@@ -49,8 +49,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className="text-align-center">
-                <h2 className=""></h2>
+            <div className="text-align-center testt">
                 <Card>
                     <CardContent>
                         <Typography variant="h4" component="div">

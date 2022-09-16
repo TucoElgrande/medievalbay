@@ -6,7 +6,7 @@ import Products from "./pages/Products";
 import Checkout from "./pages/Checkout";
 import SpecificProducts from "./pages/SpecificProducts";
 import BackgroundStyle from "./components/BackgroundStyle";
-import { Button } from "@mui/material";
+import { Button, Card, CardContent } from "@mui/material";
 function App() {
     return (
         <Routes>
@@ -32,20 +32,26 @@ function App() {
                     <>
                         <Header />
                         <BackgroundStyle />
-                        <main className="products-main center-non-flex text-align-center">
-                            <h1>404</h1>
-                            <h1>Merlin could not find your page</h1>
-                            <NavLink to={"/"}>
-                                {" "}
-                                <Button variant="contained" href="#contained-buttons">
-                                    Back to home
-                                </Button>
-                            </NavLink>
-                            <img
-                                className="center max-width "
-                                src="https://i.imgur.com/95yjYOs.gif"
-                            ></img>
-                        </main>
+                        <div className="products-main center-non-flex text-align-center">
+                            <Card>
+                                <CardContent>
+                                    <main className="products-main center-non-flex text-align-center">
+                                        <h1>404</h1>
+                                        <h1>Merlin could not find your page</h1>
+                                        <NavLink to={"/"}>
+                                            {" "}
+                                            <Button variant="contained" href="#contained-buttons">
+                                                Back to home
+                                            </Button>
+                                        </NavLink>
+                                    </main>
+                                </CardContent>
+                            </Card>
+                        </div>
+                        <img
+                            className="center max-width "
+                            src="https://i.imgur.com/95yjYOs.gif"
+                        ></img>
                     </>
                 }
             />
