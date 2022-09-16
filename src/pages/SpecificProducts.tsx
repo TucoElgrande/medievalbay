@@ -51,12 +51,8 @@ function SpecificProducts() {
 
                 <div className="flex-container flex-wrap center-items products-main center-non-flex">
                     {relatedProducts.map((product) => (
-                        <div className="product-margin">
-                            <ProductCardBrowse
-                                key={product.id}
-                                product={product}
-                                cardClickable={true}
-                            />
+                        <div className="product-margin" key={product.id}>
+                            <ProductCardBrowse product={product} cardClickable={true} />
                         </div>
                     ))}
                 </div>
