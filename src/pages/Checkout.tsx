@@ -101,23 +101,30 @@ export function Checkout() {
         );
     } else
         return (
-            <Card>
-                <div className="center-non-flex" style={{ marginTop: "5rem" }}>
-                    <div className="center text-align-center">
-                        <h2>Thank you for your purchase esteemed customer </h2>
-                        <h1>{customer.fname}</h1>
-                        <h3 className="text-align-center">
-                            A confirmation of your purchase is sent to {customer.email}
-                        </h3>
-                    </div>
-                    <img className="center max-width" src="https://i.imgur.com/JQgYENA.gif"></img>
-                    <p className="text-align-center">
-                        <NavLink to={"/products"}>
-                            <Button variant="contained">Back to products</Button>
-                        </NavLink>
-                    </p>
-                </div>
-            </Card>
+            <div className="main-content center-non-flex">
+                <Card>
+                    <CardContent>
+                        <div className="center-non-flex main-content" style={{ marginTop: "5rem" }}>
+                            <div className="center text-align-center">
+                                <h2>Thank you for your purchase esteemed customer </h2>
+                                <h1>{customer.fname}</h1>
+                                <h3 className="text-align-center">
+                                    A confirmation of your purchase is sent to {customer.email}
+                                </h3>
+                            </div>
+                            <img
+                                className="center max-width"
+                                src="https://i.imgur.com/JQgYENA.gif"
+                            ></img>
+                            <p className="text-align-center">
+                                <NavLink to={"/products"}>
+                                    <Button variant="contained">Back to products</Button>
+                                </NavLink>
+                            </p>
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
         );
 }
 
