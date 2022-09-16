@@ -14,7 +14,7 @@ Yrkeshögskolan Borås klass Suvnet21
 
 ---
 
-# Våra avgränsninga
+# Våra avgränsningar
 
 I projektet har vi valt att lägga vår adminfunktionalitet i "Products" då det känns som en mer naturlig del då vi inte har någon admin funktionalitet i första sidan.
 
