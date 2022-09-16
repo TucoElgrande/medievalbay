@@ -8,7 +8,7 @@ export interface Product {
     title: string;
     price: number;
     imageUrl: string;
-    description?: string;
+    description: string;
 }
 
 export type ProductDTO = Omit<Product, "id">;

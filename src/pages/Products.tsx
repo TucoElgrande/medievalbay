@@ -7,7 +7,7 @@ import "./Products.css";
 
 function Products() {
     const { products, isAdmin, toggleAdmin } = useProduct();
-    const noProduct: Product = { id: 0, title: "", price: 0, imageUrl: "" };
+    const noProduct: Product = { id: 0, title: "", price: 0, imageUrl: "", description: "" };
 
     return (
         <div className="products-main center-non-flex">

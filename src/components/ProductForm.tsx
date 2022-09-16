@@ -113,7 +113,7 @@ function ProductForm(props: Props) {
                         label="Description"
                         variant="outlined"
                         placeholder="Description(Optional)"
-                        type="string"
+                        type="text"
                         name="description"
                         value={formik.values.description}
                         onChange={formik.handleChange}
