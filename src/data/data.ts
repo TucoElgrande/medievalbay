@@ -99,7 +99,6 @@ export function getAmountOfProducts(amount: number) {
     }
     let returnProducts: Product[] = [];
 
-    // DEEP copy xd
     let productsCopy: Product[] = JSON.parse(JSON.stringify(products));
 
     for (let index = 0; index < amount; index++) {

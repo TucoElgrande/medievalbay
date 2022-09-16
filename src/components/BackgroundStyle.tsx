@@ -1,6 +1,5 @@
 import React from "react";
 import imageVillage from "../assets/img/village.png";
-import imageVikings from "../assets/img/vikings.jpg";
 
 function BackgroundStyle() {
     return (

@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, Typography, CardActions, Button } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 import React from "react";
 import { Product } from "../context/ProductContext";
 

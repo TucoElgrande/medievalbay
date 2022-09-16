@@ -1,7 +1,6 @@
-import { Button, Card, CardContent, Typography } from "@mui/material";
+import { Button, Card, CardContent } from "@mui/material";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Product } from "../context/ProductContext";
 
 type Props = {
     errorMessage: String;

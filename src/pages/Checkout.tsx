@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
 import Button from "@mui/material/Button";
 import { currencyFormat } from "../utilities/currencyFormat";
-import CustomerForm, { Customer, CustomerCreate } from "../components/CustomerForm";
-import { string } from "yup";
+import CustomerForm, { CustomerCreate } from "../components/CustomerForm";
 import "./Checkout.css";
-import { Link as RouterLink, LinkProps as RouterLinkProps, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Confirmation.css";
-import { LinkProps } from "@mui/material/Link";
 import ProductNotFound from "../components/ProductNotFound";
-import { ErrorMessage } from "formik";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent } from "@mui/material";
 
 export function Checkout() {
     const { cart, removeOneFromCart, removeAllCart, addToCart } = useCart();
@@ -115,9 +112,7 @@ export function Checkout() {
                             A confirmation of your purchase is sent to {customer.email}{" "}
                         </h3>
                     </div>
-
                     <img className="center max-width" src="https://i.imgur.com/JQgYENA.gif"></img>
-
                     <p className="text-align-center">
                         <NavLink to={"/products"}>
                             {""}

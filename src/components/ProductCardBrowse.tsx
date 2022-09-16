@@ -1,15 +1,13 @@
 import React, { CSSProperties } from "react";
 import { useCart } from "../context/CartContext";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import { Button, Typography } from "@mui/material";
 import { Product, useProduct } from "../context/ProductContext";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ProductForm from "./ProductForm";
-import { ProductionQuantityLimits } from "@mui/icons-material";
 import "../pages/Products.css";
 import { currencyFormat } from "../utilities/currencyFormat";
 
@@ -28,7 +26,7 @@ const ProductCardBrowse: React.FC<Props> = ({
     buttons,
     isEditable,
 }) => {
-    const { addToCart, removeOneFromCart } = useCart();
+    const { addToCart } = useCart();
     const { isAdmin, removeProduct } = useProduct();
 
     return (

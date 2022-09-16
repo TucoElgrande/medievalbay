@@ -27,8 +27,6 @@ const CartContext = createContext<ContextValue>({
 function CartProvider({ children }: Props) {
     const [cart, setCart] = useState<cartItem[]>([]);
 
-    // Something something don't mutilate the array
-
     const addToCart = (product: Product) => {
         setCart((state) => {
             const i = state.findIndex((p) => p.product.id === product.id);
@@ -42,9 +40,6 @@ function CartProvider({ children }: Props) {
                 return [...state, itm];
             }
         });
-
-        // let itm: cartItem;
-        // setCart((prevState) => [...prevState, itm]);
     };
     const removeOneFromCart = (product: Product) => {
         setCart((state) => {
@@ -71,10 +66,6 @@ function CartProvider({ children }: Props) {
         setCart([]);
     };
 
-    // const displayCart = () => {
-    //     return (
-    //         </div>
-    // )}
     return (
         <CartContext.Provider value={{ cart, addToCart, removeAllCart, removeOneFromCart }}>
             {children}

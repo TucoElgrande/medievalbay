@@ -1,12 +1,11 @@
-import { useFormik, yupToFormErrors } from "formik";
+import { useFormik } from "formik";
 import * as Yup from "yup";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import React, { useCallback } from "react";
+import React from "react";
 import { Stack } from "@mui/system";
 import { Button } from "@mui/material";
 import { useCart } from "../context/CartContext";
-import { maxHeaderSize } from "http";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -65,7 +64,6 @@ const CustomerForm: React.FC<Props> = ({ callBack }) => {
         onSubmit: (values) => {
             callBack(values);
             removeAllCart();
-            console.log("ON SUBMIT", values);
         },
     });
 

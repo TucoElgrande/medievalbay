@@ -1,11 +1,8 @@
-import { Badge, Box, FormControlLabel, FormGroup, IconButton, Switch } from "@mui/material";
-import React, { CSSProperties, useState } from "react";
+import { Badge, Box } from "@mui/material";
+import React, { CSSProperties } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Shop } from "@mui/icons-material";
-import { useProduct } from "../context/ProductContext";
-import { spacing } from '@mui/system';
 
 function Header() {
     const { cart } = useCart();
@@ -28,7 +25,8 @@ function Header() {
                                 md: "2rem",
                                 lg: "2rem",
                                 xl: "2rem",
-                            }, mx: "auto"
+                            },
+                            mx: "auto",
                         }}
                     >
                         <NavLink style={linkStyle} to="">
@@ -41,7 +39,6 @@ function Header() {
                         <NavLink style={linkStyle} to="checkout">
                             Cart🐎
                             <Badge color="secondary" badgeContent={cartItems}>
-                                {/* 🛒 */}
                                 <ShoppingCartIcon
                                     sx={{
                                         fontSize: {
@@ -75,7 +72,7 @@ const rootStyle: CSSProperties = {
     height: "3rem",
     zIndex: "1000",
     borderBottom: "2px solid black",
-    };
+};
 
 interface LinkProps {
     isActive: boolean;

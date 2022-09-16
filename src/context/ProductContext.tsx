@@ -38,7 +38,7 @@ const ProductContext = createContext<ContextValue>({
 function ProductProvider({ children }: Props) {
     const InitData = localStorage.getItem("Products");
 
-    let parsedData: Product[] = mockProducts; //TODO ALTER?
+    let parsedData: Product[] = mockProducts;
 
     if (isString(InitData)) {
         parsedData = JSON.parse(InitData);

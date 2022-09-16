@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { getAmountOfProducts, getProduct } from "../data/data";
 import ProductCardBrowse from "../components/ProductCardBrowse";
 import "./Products.css";
-import { useProduct } from "../context/ProductContext";
 import { Button, Card, CardContent, Typography } from "@mui/material";
 import { useCart } from "../context/CartContext";
 import { currencyFormat } from "../utilities/currencyFormat";
