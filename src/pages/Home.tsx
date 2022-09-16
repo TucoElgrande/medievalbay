@@ -57,12 +57,8 @@ function Home() {
                         </Typography>
                         <div className="flex-container flex-wrap products-main center-items center-non-flex">
                             {products.map((product) => (
-                                <div className="product-margin">
-                                    <ProductCardBrowse
-                                        key={product.id}
-                                        product={product}
-                                        cardClickable={true}
-                                    />
+                                <div className="product-margin" key={product.id}>
+                                    <ProductCardBrowse product={product} cardClickable={true} />
                                 </div>
                             ))}
                         </div>

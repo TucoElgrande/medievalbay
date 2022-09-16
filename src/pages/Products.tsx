@@ -24,9 +24,8 @@ function Products() {
             )}
             <div className="flex-container flex-wrap center-items">
                 {products.map((product) => (
-                    <div className="product-margin">
+                    <div className="product-margin" key={product.id}>
                         <ProductCardBrowse
-                            key={product.id}
                             product={product}
                             inspect={true}
                             cardClickable={true}
